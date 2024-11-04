@@ -21,5 +21,4 @@ function stringVowels(N,str){
         return false;
       }
     }
-    
 stringVowels(3, 'abc')     
