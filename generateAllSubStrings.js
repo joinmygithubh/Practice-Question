@@ -4,8 +4,7 @@ function generateAllSubStrings(str){
         for(let j=i; j<str.length; j++){
             temp += str[j];
             console.log(temp)
-        }
-        
+        }  
     }
 }
 generateAllSubStrings("MASAI")
