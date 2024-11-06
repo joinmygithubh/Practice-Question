@@ -15,5 +15,4 @@ function numberPattern(N){
       console.log();
     }
   }
-
 numberPattern(5)  
