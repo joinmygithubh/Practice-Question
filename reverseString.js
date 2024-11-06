@@ -8,5 +8,4 @@ function revereseAString(str) {
 
   return nstr;
 }
-
 console.log(revereseAString(str));
