@@ -1,5 +1,4 @@
 let str = "o n e";
-
 function revereseAStringWithoutSpaces(str){  
     let nstr = "";
     for(let i=str.length-1;i>=0; i--){
