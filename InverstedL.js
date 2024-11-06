@@ -7,6 +7,5 @@ function invertedL(N) {
         process.stdout.write("*")
         console.log()
     }
-    
 }
 invertedL(4);
