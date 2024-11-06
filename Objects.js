@@ -5,7 +5,6 @@ let obj = {
     size : ["s", "m", "l", "xl"],
     isCotton : true
 }
-
 for(let key in obj){
     console.log(obj[key])
 }
