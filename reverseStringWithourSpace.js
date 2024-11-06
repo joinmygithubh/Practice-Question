@@ -14,5 +14,4 @@ function revereseAStringWithoutSpaces(str){
     }
     return nstr;
 }
-
 console.log(revereseAStringWithoutSpaces(str))
