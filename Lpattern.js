@@ -9,4 +9,5 @@ function patternOfL(N) {
 }
 
 
+
 patternOfL(4)
