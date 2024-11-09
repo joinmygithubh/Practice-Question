@@ -15,4 +15,4 @@ function pineTreePattern(n) {
     pipe+="|"
     console.log(pipe)
   }
-  pineTreePattern(5)
+pineTreePattern(5)
