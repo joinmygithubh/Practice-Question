@@ -5,6 +5,7 @@ function pineTreePattern(n) {
       }
       for (let k = 1; k <= 2 * i - 1; k++) {
         process.stdout.write("*");
+    
       }
       console.log();
     }
