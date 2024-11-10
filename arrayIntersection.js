@@ -9,10 +9,8 @@ function intersectionOfArray(N, arr1, arr2){
     }
 }
 
-
 let N =3;
 let arr1 = [4,5,7]
 let arr2 = [9,2,5]
-
 
 intersectionOfArray(3, arr1,arr2)
