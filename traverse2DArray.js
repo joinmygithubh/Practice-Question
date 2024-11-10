@@ -5,5 +5,6 @@ for(let i=0; i<arr.length; i++){
         console.log(arr[i][j])
         narr.push(arr[i][j]) 
     }
+
     
 }console.log(narr)
