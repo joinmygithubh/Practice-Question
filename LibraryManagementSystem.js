@@ -39,7 +39,6 @@ class Book{
         return Math.floor(100000000000 + Math.random()+90000000).toString();
     }
 }
-
 class Library{
     constructor(){
         this.books =[];
