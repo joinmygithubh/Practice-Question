@@ -13,7 +13,7 @@ let number1 = 5, number2 = 10;
 console.log(compareNumbers(number1, number2));  //output: "10 is larger than 5"
 
 number1 = 7, number2 = 7;
-console.log(compareNumbers(number1, number2));  //   output: "Both numbers are equal"
+console.log(compareNumbers(number1, number2));  //output: "Both numbers are equal"
 
 number1 = -1, number2 = -10;
 console.log(compareNumbers(number1, number2));  //     output: "-1 is larger than -10"
