@@ -57,7 +57,6 @@ class Library{
             book.author.toLowerCase().includes(query.toLowerCase())
         );
     }
-
     displayBooks(){
         this.books.forEach(book =>{
             console.log("Title "+ book.title + ","+ "Author: " + book.author + "," + "ISBN:" + book.ISBN + "," + "Available Copies" + book.availableCopies )
