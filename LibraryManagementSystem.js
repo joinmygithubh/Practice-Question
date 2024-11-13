@@ -69,8 +69,6 @@ let book1 = new Book("Java Basics", "Sameer", Book.ISBNgeneration(), 12)
 let book2 = new Book("C++", "James Goslin", Book.ISBNgeneration(),5)
 let book3 =new Book ("C sharp", "James Goslin",Book.ISBNgeneration(),12)
 
-
-
 let library = new Library();
 
 library.addBook(book1);
