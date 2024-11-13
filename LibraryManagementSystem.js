@@ -66,10 +66,9 @@ class Library{
 }
 
 let book1 = new Book("Java Basics", "Sameer", Book.ISBNgeneration(), 12)
-let book2 = new Book("C++", "same", Book.ISBNgeneration(),5)
-let book3 =new Book ("C sharp", "integrated",Book.ISBNgeneration(),12)
-let book4 = new Book("C", "Integrated", Book.ISBNgeneration(),13);
-let book5 = new Book("Swift", "James Clorin", Book.ISBNgeneration(),16);
+let book2 = new Book("C++", "James Goslin", Book.ISBNgeneration(),5)
+let book3 =new Book ("C sharp", "James Goslin",Book.ISBNgeneration(),12)
+
 
 
 let library = new Library();
@@ -77,8 +76,7 @@ let library = new Library();
 library.addBook(book1);
 library.addBook(book2)
 library.addBook(book3)
-library.addBook(book4);
-library.addBook(book5);
+
 library.displayBooks();
 
 console.log(library.searchBooks("Java Basics"))
