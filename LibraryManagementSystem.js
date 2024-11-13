@@ -7,7 +7,6 @@ class Book{
         this.#ISBN = ISBN;
         this.availableCopies = availableCopies;
     }
-
     get availableCopies(){
         return this._availableCopies;
     }
