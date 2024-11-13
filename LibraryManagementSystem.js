@@ -1,6 +1,5 @@
 class Book{
     #ISBN;
-
     constructor(title, author, ISBN, availableCopies){
         this.title = title
         this.author = author
