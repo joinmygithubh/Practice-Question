@@ -20,7 +20,6 @@ class Book{
     #validateISBN(ISBN){
         return typeof ISBN === "string" && ISBN.length === 13;
     }
-
     get ISBN(){
         return this.#ISBN;
     }
