@@ -34,7 +34,6 @@ class Book{
             console.log("Invalid ISBN");
         }
     }
-
     static ISBNgeneration (){
         return Math.floor(100000000000 + Math.random()+90000000).toString();
     }
