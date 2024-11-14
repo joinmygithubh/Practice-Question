@@ -14,5 +14,4 @@ function cards(arr,N){
     console.log("No")
 }
 
-
 cards (arr,N)
