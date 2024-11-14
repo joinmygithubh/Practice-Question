@@ -3,7 +3,7 @@ class Book{
     constructor(title, author, ISBN, availableCopies){
         this.title = title
         this.author = author
-        this.#ISBN = ISBN;
+        this.#ISBN = ISBN
         this.availableCopies = availableCopies;
     }
     get availableCopies(){
