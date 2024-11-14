@@ -7,9 +7,6 @@ for(let i=0; i<N;i++){
             console.log("Yes")
             return;
         }
-        else{
-            console.log("No")
-            return;
-        }
     }
+    console.log("No")
 }
