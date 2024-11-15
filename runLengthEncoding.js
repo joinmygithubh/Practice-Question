@@ -11,5 +11,4 @@ function runLengthEncoding(S){
     }
     console.log(res)
 }
-
 runLengthEncoding("aaabbbbccccaaa");
