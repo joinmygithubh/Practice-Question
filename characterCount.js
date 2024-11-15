@@ -12,4 +12,5 @@ function characterCount(S){
     }
     console.log(result)
 }
+
 characterCount("aaabbaaa")
