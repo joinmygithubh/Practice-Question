@@ -14,5 +14,6 @@ function secondLargestNumber(arr) {
     return secondLargest === -Infinity ? null : secondLargest;
 }
 // Example usage
+
 const array = [10, 5, 20, 15, 30];
 console.log(secondLargestNumber(array)); // Output: 20
