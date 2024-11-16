@@ -6,7 +6,6 @@ function missingElement( arr){
     for(let i=0; i<arr.length; i++){
         actualSum += arr[i];
     }
-
     let res = expectedSum - actualSum;
     console.log(res)
 }
