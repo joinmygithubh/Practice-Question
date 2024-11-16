@@ -10,6 +10,7 @@ function missingElement( arr){
     console.log(res)
 }
 
+
 let arr = [1,2,3,5];
 missingElement(arr)
 
