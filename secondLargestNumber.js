@@ -12,7 +12,6 @@ function secondLargestNumber(arr) {
             secondLargest = num;
         }
     }
-
     return secondLargest === -Infinity ? null : secondLargest;
 }
 
