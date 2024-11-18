@@ -62,6 +62,7 @@ let book1 = new Book("Java Basics", "Sameer", Book.ISBNgeneration(), 12)
 let book2 = new Book("C++", "James Goslin", Book.ISBNgeneration(),5)
 let book3 =new Book ("C sharp", "James Goslin",Book.ISBNgeneration(),12)
 let book4 = new Book("Swift By Python", "James Will", Book.ISBNgeneration(),9);
+let book5 = new Book("Physic", "authorxyz",Book.ISBNgeneration(),12);
 
 
 let library = new Library();
@@ -70,6 +71,7 @@ library.addBook(book1);
 library.addBook(book2)
 library.addBook(book3)
 library.addBook(book4);
+library.addBook(book5);
 
 library.displayBooks();
 
@@ -78,6 +80,6 @@ console.log(library.searchBooks("C sharp"))
 console.log(library.searchBooks("Swift"))
 console.log(library.searchBooks("C"))
 console.log(library.searchBooks("Swift By Python"));
+console.log(library.searchBooks("Physic"))
 library.removeBook(book1.ISBN);
-
 library.displayBooks();
