@@ -15,7 +15,6 @@ for(let i=1; i<=2; i++){
   }
   column--
 }
-
 for(let i=1; i<=2; i++){
   if(arr[2][i]%3==0){
     ans +=i
