@@ -22,6 +22,7 @@ function runProgram(input) {
       runProgram(read);
     });
     
+
     process.on("SIGINT", function () {
       read = read.replace(/\n$/, "");
       runProgram(read);
