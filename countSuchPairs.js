@@ -13,7 +13,6 @@ function countSuchPairs(N,K,A){
 }    
 
 
-
 let N =5;
 let K =9;
 let A = [3,0,6,2,7]
