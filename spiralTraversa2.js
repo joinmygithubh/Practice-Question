@@ -35,7 +35,6 @@ function spiralTraversal(N, M, arr){
 
 let N=4;
 let M=3;
-
 let arr =[
 [4, 5, 6],
 [3, 12, 7],
