@@ -1,7 +1,6 @@
 function zTraversal(N, arr) {
     // Write code here
     let temp = "";
-
     for (let j = 0; j < N; j++) {
         temp += arr[0][j] + " ";
     }
