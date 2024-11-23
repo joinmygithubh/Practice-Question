@@ -14,7 +14,6 @@ function zTraversal(N, arr) {
 
     console.log(temp);
 }
-
 let arr = [[1,2,3],[4,5,6],[7,8,9]]
 
 zTraversal(3, arr)
