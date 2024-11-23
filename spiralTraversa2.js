@@ -33,7 +33,6 @@ function spiralTraversal(N, M, arr){
   console.log(temp)
 }
 
-
 let N=4;
 let M=3;
 
