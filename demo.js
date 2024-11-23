@@ -1,16 +1,24 @@
-function findMissingNumber(arr) {
-    let n = arr.length + 1; // Total numbers expected (including the missing one)
-    let expectedSum = (n * (n + 1)) / 2; // Sum of first n natural numbers
-    let actualSum = 0;
+let left =0
+let right = n-1
+let bottom = n-1
+let top =0
 
-    // Calculate the actual sum of array elements
-    for (let i = 0; i < arr.length; i++) {
-        actualSum += arr[i];
+
+
+
+
+
+while(count<=n*n){
+    for(let j=left; j<=right; j++){
+        console.log(arr[top][j])
     }
-
-    // Missing number is the difference between expected and actual sum
-    return expectedSum - actualSum;
+    top++
+    for(let i=top; i<=bottom; i++){
+        console.log(arr[i][right])
+    }
+    right--
+    for(let j=right; j>=0; j--){
+        console.log([bottom][j])
+    }
+    
 }
-
-let array = [8, 2, 4, 5, 3, 7, 1];
-console.log("Missing Number:", findMissingNumber(array));
