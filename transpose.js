@@ -18,7 +18,6 @@ function rotateBy90(R, matrix){
     for (let i = 0; i < R; i++) {
         console.log(result[i].join(" "));
     }
-
 }
 let matrix = [
 [1, 2, 3, 4],
