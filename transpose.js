@@ -1,8 +1,7 @@
 function rotateBy90(R, matrix){
     //write code here
    let result = [];
-
-    // Initialize the result matrix
+// Initialize the result matrix
     for (let i = 0; i < R; i++) {
         result.push([]);
     }
