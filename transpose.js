@@ -13,7 +13,6 @@ function rotateBy90(R, matrix){
             result[R - j - 1][i] = matrix[i][j];
         }
     }
-
     // Print the rotated matrix
     for (let i = 0; i < R; i++) {
         console.log(result[i].join(" "));
