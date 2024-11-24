@@ -5,7 +5,6 @@ function rotateBy90(R, matrix){
     for (let i = 0; i < R; i++) {
         result.push([]);
     }
-
     // Fill the result matrix
     for (let i = 0; i < R; i++) {
         for (let j = 0; j < R; j++) {
