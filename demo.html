@@ -3,17 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Button Active Example</title>
-    <style>
-      div p{
-        font-weight: bold;
-      }
-    </style>
+    <title>Inline examples</title>
   </head>
+  <style>
+    
+      #inline-boxes >div {
+        display: flex;
+        width: 100px;
+        height: 100px;
+        background-color: black;
+        margin-bottom: 10px;
+      }
+    
+    #div-two {
+      width: 100px;
+      height: 100px;
+      background-color: rgb(128, 0, 105);
+    }
+  </style>
   <body>
-    <div>
-      <p>Text inside div.</p>
+    <div id="inline-boxes">
+      <div></div>
+      <div></div>
     </div>
-    <p>Text outside div.</p>
   </body>
 </html>
