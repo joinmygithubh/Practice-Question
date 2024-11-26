@@ -23,7 +23,6 @@ function specificDiagonals(R, C, matrix, K){
     console.log(leftBag)
     console.log(rightBag)
 }
-
 let matrix = [
     [1, 2, 3],
     [4, 5, 6],
