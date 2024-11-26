@@ -5,5 +5,4 @@ function mapChar(str){
         console.log(i , str[i])
     }
 }
-
 console.log(mapChar(str));
