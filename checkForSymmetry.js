@@ -27,7 +27,6 @@ function checkForSymmetry(n, matrix) {
         console.log("NO");
     }
 }
-
 const n = 4;
 const matrix = [
     ['*', '.', '*', '.'],
@@ -35,5 +34,4 @@ const matrix = [
     ['.', '*', '.', '*'],
     ['*', '.', '*', '.']
 ];
-
 console.log(checkForSymmetry(n, matrix)); // Output: BOTH
