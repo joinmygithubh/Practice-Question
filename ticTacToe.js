@@ -45,11 +45,9 @@ function ticTacToe(matrix) {
   }
 }
 
-
 let matrix =[
 ["x", "o", "x"],
 ["o", "x", "x"],
 ["o", "o", "o"]
 ]
-
 ticTacToe(matrix)
