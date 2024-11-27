@@ -34,4 +34,6 @@ const matrix = [
     ['.', '*', '.', '*'],
     ['*', '.', '*', '.']
 ];
-console.log(checkForSymmetry(n, matrix)); // Output: BOTH
+
+
+console.log(checkForSymmetry(n, matrix)); 
