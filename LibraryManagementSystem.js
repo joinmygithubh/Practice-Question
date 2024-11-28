@@ -66,6 +66,9 @@ let book5 = new Book("Physic", "authorxyz",Book.ISBNgeneration(),12);
 
 let library = new Library();
 
+
+
+
 library.addBook(book1);
 library.addBook(book2)
 library.addBook(book3)
