@@ -63,6 +63,8 @@ let book2 = new Book("C++", "James Goslin", Book.ISBNgeneration(),5)
 let book3 =new Book ("C sharp", "James Goslin",Book.ISBNgeneration(),12)
 let book4 = new Book("Swift By Python", "James Will", Book.ISBNgeneration(),9);
 let book5 = new Book("Physic", "authorxyz",Book.ISBNgeneration(),12);
+let book6 = new Book("Chemistry", "authorxyz",Book.ISBNgeneration(),12);
+
 
 let library = new Library();
 
