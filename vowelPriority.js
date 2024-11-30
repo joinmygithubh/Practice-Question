@@ -19,7 +19,6 @@ function vowelsPriority(str){
 let str = "masaischool"
 let str1 = "ubcdefghioel"
 let str2 = "rhythm"
-
 vowelsPriority(str)
 vowelsPriority(str1)
 vowelsPriority(str2)
