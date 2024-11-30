@@ -22,7 +22,6 @@ function maxFrequency(N,arr){
         console.log("2-"+c2)
       }
     }
-    
 
 let N =7
 let arr = [1, 1, 1, 0, 2, 0, 1]
