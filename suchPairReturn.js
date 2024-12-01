@@ -16,7 +16,6 @@ function findPair(arr, n, k) {
       l++;
     }
   }
-
   console.log("-1");
 }
 let n=5;
