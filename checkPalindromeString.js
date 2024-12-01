@@ -13,9 +13,7 @@ function isPalindrome(str) {
   }
   console.log("YES");
 }
-
 let str = "vtmtmv"
 let str1 = "toohottohoot"
-
 isPalindrome(str)
 isPalindrome(str1)
