@@ -1,3 +1,5 @@
+//Type 2 -- Two Pointer Method i.e Both Pointers moves in a same direction
+
 function mergeSortedArray(A, B, n) {
   let i = 0; // Pointer for ar1
   let j = 0; // Pointer for ar2
@@ -20,17 +22,14 @@ function mergeSortedArray(A, B, n) {
     i++;
     k++;
   }
-
   // Add remaining elements of ar2 (if any)
   while (j < n) {
     C[k] = B[j];
     j++;
     k++;
   }
-
   console.log(C); // Return the merged array
 }
-
 const A = [1, 3, 5]; 
 const B = [2, 4, 6]; 
 let n =3
