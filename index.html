@@ -1,74 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Complex Navigation Bar</title>
-    <style>
-        /* Basic styles for the navigation bar */
-        nav {
-            display: flex;
-            justify-content: space-around;
-            background-color: #333;
-            padding: 10px;
-        }
-
-        /* Styling each section */
-        nav .section {
-            color: white;
-        }
-
-        /* Styling links within sections using descendant combinators */
-        nav .section a {
-            text-decoration: none;
-            color: #ccc; /* Default color for links */
-            margin: 0 5px;
-        }
-
-        /* Direct child links styled differently */
-        nav .section > a {
-            color: #ff5722; /* Distinct color for direct children */
-            font-weight: bold;
-        }
-
-        /* Pseudo-classes for hover and active states */
-        nav .section a:hover {
-            color: #00bcd4; /* Change color on hover */
-        }
-
-        nav .section a:active {
-            color: #4caf50; /* Change color when active */
-        }
-
-        /* Links with href starting with "https" */
-        nav .section a[href^="https"] {
-            color: #ffd700; /* Gold color for secure links */
-            font-style: italic;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox Center Example</title>
+  <style>
+    .container {
+      display: flex;
+      justify-content: center; /* Horizontally center the items */
+      align-items: center;    /* Vertically center the items */
+      height: 100vh;          /* Set the height of the container to the full viewport height */
+      background-color: #f0f0f0; /* Light background for visualization */
+    }
+    .box {
+      width: 200px;
+      height: 100px;
+      background-color: #3498db; /* Blue box */
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 18px;
+      border-radius: 8px;
+    }
+  </style>
 </head>
 <body>
-    <nav>
-        <!-- Section 1 -->
-        <div class="section">
-            <a href="https://example.com">Home</a>
-            <a href="https://about.com">About</a>
-            <a href="contact.html">Contact</a>
-        </div>
-
-        <!-- Section 2 -->
-        <div class="section">
-            <a href="services.html">Services</a>
-            <a href="https://products.com">Products</a>
-            <a href="https://support.com">Support</a>
-        </div>
-
-        <!-- Section 3 -->
-        <div class="section">
-            <a href="blog.html">Blog</a>
-            <a href="https://news.com">News</a>
-            <a href="https://careers.com">Careers</a>
-        </div>
-    </nav>
+  <div class="container">
+    <div class="box">Centered Box</div>
+  </div>
 </body>
 </html>
