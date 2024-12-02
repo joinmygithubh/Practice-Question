@@ -16,7 +16,6 @@ function reverseAnArray(arr) {
   }
   console.log(arr)
 }
-
 let arr = [2, 3, 4, 5, 1, 5, 7];
 
 reverseAnArray(arr)
