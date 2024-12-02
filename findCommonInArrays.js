@@ -1,3 +1,5 @@
+//Common in Array using Two pointer Type-2 moving in same direction
+
 function findCommonElements(A, B, n) {
     let i = 0; // Pointer for array A
     let j = n - 1; // Pointer for array B (since it's sorted in descending order)
