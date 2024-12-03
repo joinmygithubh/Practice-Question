@@ -10,7 +10,6 @@ function solve(N, S, L, R) {
     console.log(result);
 }
 
-
 let N=8
 let S ='fxavixem'
 let L= 0
