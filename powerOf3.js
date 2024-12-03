@@ -13,7 +13,6 @@ function solve(x) {
 let x = 2;
 let x1 = 3;
 let x2= 4;
-
 solve(x)
 solve(x1)
 solve(x2)
