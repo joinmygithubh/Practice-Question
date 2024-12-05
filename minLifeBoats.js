@@ -16,7 +16,6 @@ function minLifeboats(weights, n, k) {
   console.log(count);
 }
 
-
 let n =4, k=5
 let weights =[3, 5, 3 ,4]
 let n2 =4; k2=3
