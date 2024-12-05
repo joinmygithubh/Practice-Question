@@ -18,17 +18,13 @@ function longestUniqueSubarray(gifts, n) {
             i++; // Move the left pointer forward
         }
     }
-
     console.log(max); 
 }
 
-
 let n=8
-
 let gifts =[1, 2, 1, 3, 2, 7, 4, 2]
 let n2= 5
 let gifts2 =[1, 2, 1, 3, 4]
-
 let n3=4
 let gifts3 =[1, 2, 2, 1]
 
