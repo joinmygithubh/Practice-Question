@@ -12,7 +12,6 @@ function minSum(n,k,arr){
     }
     console.log(temp)
   }
-  
   function runProgram(input) {
     input = input.trim().split("\n");
     let tc = +input[0];
