@@ -16,7 +16,5 @@ function maxSum(n,k,arr){
   }
   
 let k =3
-
 let arr =[-1, -1, -2, 1, -2, 4, 1, 9, 3, 9]
-
 maxSum(k,arr)
