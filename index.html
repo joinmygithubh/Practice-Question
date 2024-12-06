@@ -1,55 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Responsive Grid Debugging</title>
-  <style>
-    /* Base styles for mobile-first design */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-      text-align: center;
-    }
-
-    h1 {
-      margin-bottom: 20px;
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: 1fr; /* Single column for small screens */
-      gap: 20px;
-      padding: 10px;
-    }
-
-    /* Medium screens (768px to 1024px) */
-    @media (min-width: 768px) and (max-width: 1024px) {
-      .gallery {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
-        gap: 20px; /* Proper gap for medium screens */
-      }
-    }
-
-    /* Large screens (above 1024px) */
-    @media (min-width: 1024px) {
-      .gallery {
-        grid-template-columns: repeat(4, 1fr); /* 4 columns for large screens */
-        gap: 20px; /* Maintain gap for large screens */
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic To-Do List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            width: 300px;
+        }
+        button {
+            padding: 10px;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            width: 320px;
+        }
+        li {
+            padding: 10px;
+            margin: 5px 0;
+            background: #f0f0f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .completed {
+            text-decoration: line-through;
+            color: grey;
+        }
+        .btn-complete, .btn-delete {
+            margin-left: 10px;
+        }
+    </style>
 </head>
 <body>
-  <h1>Responsive Gallery</h1>
-  <div class="gallery">
-    <div class="item">Item 1</div>
-    <div class="item">Item 2</div>
-    <div class="item">Item 3</div>
-    <div class="item">Item 4</div>
-    <div class="item">Item 5</div>
-    <div class="item">Item 6</div>
-  </div>
+
+    <h1>To-Do List</h1>
+    <input type="text" id="taskInput" placeholder="Enter a task">
+    <button id="addTaskBtn">Add Task</button>
+    <ul id="taskList"></ul>
+
+    <script>
+        document.getElementById('addTaskBtn').addEventListener('click', function() {
+            const taskInput = document.getElementById('taskInput');
+            const taskText = taskInput.value.trim();
+
+            if (taskText === '') {
+                alert('Task cannot be empty');
+                return;
+            }
+
+            const li = document.createElement('li');
+
+            const taskSpan = document.createElement('span');
+            taskSpan.textContent = taskText;
+            li.appendChild(taskSpan);
+
+            const completeBtn = document.createElement('button');
+            completeBtn.textContent = 'Complete';
+            completeBtn.classList.add('btn-complete');
+            completeBtn.addEventListener('click', function() {
+                taskSpan.classList.toggle('completed');
+            });
+            li.appendChild(completeBtn);
+
+            const deleteBtn = document.createElement('button');
+            deleteBtn.textContent = 'Delete';
+            deleteBtn.classList.add('btn-delete');
+            deleteBtn.addEventListener('click', function() {
+                li.remove();
+            });
+            li.appendChild(deleteBtn);
+
+            document.getElementById('taskList').appendChild(li);
+            taskInput.value = '';
+        });
+    </script>
+
 </body>
 </html>
