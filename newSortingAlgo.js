@@ -15,7 +15,6 @@ function newSortingAlgorithm(n, k, arr) {
   }
   console.log(arr.join(" "));
 }
-
 let n = 5;
 let k= 6;
 let arr = [12, 18, 17, 65, 46]
