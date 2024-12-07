@@ -20,5 +20,4 @@ function sortItOut(n,arr){
   }
 let n=  5
 let arr =[4, 5, 3, 7, 1]
-
 sortItOut(n,arr)
