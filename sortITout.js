@@ -1,4 +1,4 @@
-function sortOut(n,arr){
+function sortItOut(n,arr){
     let narr =[]
     for(let i =0; i<n; i++){
       narr.push(i);
