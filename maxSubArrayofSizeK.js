@@ -13,7 +13,6 @@ function maxSumOfSubarray(n,arr,k){
     }
      console.log(res)
   }
-  
 let n=10;
 let k=3;
 let arr = [-1, -1, -2, 1, -2, 4, 1, 9, 3, 9]
