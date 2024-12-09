@@ -26,7 +26,6 @@ function sumOfSubarray(arr, k) {
         console.log(`Sum of subarray [${currentSubarray.join(", ")}] = ${currentSum}`);
     }
 }
-
 const arr = [1, 2, 3, 4, 5];
 const k = 3;
 sumOfSubarray(arr, k);
