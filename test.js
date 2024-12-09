@@ -1,24 +1,25 @@
-function sortOut(n,arr){
-    let narr =[]
-    for(let i =0; i<n; i++){
-      narr.push(i);
-    }
-    for(let i=0; i<n-1; i++){
-      for(let j=0; j<n-i-1; j++){
-        if(arr[j]> arr[j+1]){
-          let temp = arr[j];
-          arr[j] = arr[j+1];
-          arr[j+1] = temp;
-          
-          let ntemp = narr[j];
-          narr[j] = narr[j+1];
-          narr[j+1] = ntemp;
-        }
-      }
-    }
-    console.log(narr.join(" "))
-  }
-let n=  5
-let arr =[4, 5, 3, 7, 1]
+function FindNegativeNumber(arr, n, k) {
+  let bag = "";
 
-sortItOut(n,arr)
+  for (let i = 0; i <= n - k; i++) {
+      let count = 0;
+      let j = i;
+      let flag = true;
+
+      while (count < k) {
+          if (arr[j] < 0) {
+              bag += arr[j] + " ";
+              flag = false;
+              break;
+          }
+          count++;
+          j++;
+      }
+
+      if (flag) {
+          bag += "0 ";
+      }
+  }
+
+  console.log(bag);
+}
