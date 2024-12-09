@@ -1,6 +1,5 @@
 function FindNegativeNumber(arr, n, k) {
     let bag = ""; // Initialize bag as an empty string
-
     for (let i = 0; i <= n - k; i++) {
         let count = 0;
         let j = i;
