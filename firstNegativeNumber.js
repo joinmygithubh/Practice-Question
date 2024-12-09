@@ -5,7 +5,6 @@ function FindNegativeNumber(arr, n, k) {
         let count = 0;
         let j = i;
         let flag = true;
-
         // Check the current window of size k
         while (count < k) {
             if (arr[j] < 0) {
