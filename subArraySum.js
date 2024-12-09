@@ -18,5 +18,4 @@ for (let k = 1; k <= n; k++) {
     subarraySums.push(currentSum);
   }
 }
-
 return subarraySums;
