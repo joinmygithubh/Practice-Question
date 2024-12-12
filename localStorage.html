@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save and Load Notes</title>
+    <style>
+        /* Styling for the textarea and buttons */
+        textarea {
+            width: 300px;
+            height: 200px;
+            margin-bottom: 10px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Textarea for entering notes -->
+    <textarea id="notesTextArea" placeholder="Write your notes here..."></textarea><br>
+    
+    <!-- Buttons to Save, Load, and Clear Notes -->
+    <button id="saveNotesBtn">Save Notes</button>
+    <button id="loadNotesBtn">Load Notes</button>
+    <button id="clearNotesBtn">Clear Notes</button>
+
+    <script>
+        // Get references to the elements
+        const notesTextArea = document.getElementById("notesTextArea");
+        const saveNotesBtn = document.getElementById("saveNotesBtn");
+        const loadNotesBtn = document.getElementById("loadNotesBtn");
+        const clearNotesBtn = document.getElementById("clearNotesBtn");
+
+        // Function to save notes to localStorage
+        saveNotesBtn.addEventListener('click', function () {
+            const notes = notesTextArea.value.trim();  // Get the notes from the textarea and trim any extra spaces
+            
+            // Check if the textarea is not empty
+            if (notes === "") {
+                alert("Please enter some text to save."); // Show an alert if no notes are entered
+            } else {
+                localStorage.setItem('userNotes', notes); // Save the notes to localStorage
+                alert("Notes saved successfully!"); // Notify the user that the notes were saved
+            }
+        });
+
+        // Function to load saved notes from localStorage
+        loadNotesBtn.addEventListener('click', function () {
+            const savedNotes = localStorage.getItem('userNotes'); // Retrieve notes from localStorage
+            
+            if (savedNotes) {
+                notesTextArea.value = savedNotes; // If notes exist, display them in the textarea
+            } else {
+                notesTextArea.value = ""; // If no notes are found, clear the textarea
+                alert("No saved notes found."); // Notify the user if no notes are found
+            }
+        });
+
+        // Function to clear saved notes from localStorage
+        clearNotesBtn.addEventListener('click', function () {
+            localStorage.removeItem('userNotes'); // Remove the saved notes from localStorage
+            notesTextArea.value = ""; // Clear the textarea
+            alert("Notes cleared successfully."); // Notify the user that the notes were cleared
+        });
+
+        // On page load, check if there are saved notes in localStorage and load them
+        window.onload = function () {
+            const savedNotes = localStorage.getItem('userNotes');
+            if (savedNotes) {
+                notesTextArea.value = savedNotes; // If notes are saved, display them in the textarea
+            }
+        };
+    </script>
+
+</body>
+</html>
