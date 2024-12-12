@@ -24,7 +24,6 @@ function validParenthesis(str) {
     }
 }
 
-
 let str =" (((((((((()))))))))) "
 
 validParenthesis(str)
