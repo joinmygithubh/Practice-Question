@@ -7,18 +7,15 @@
 
 function solve(N, arr) {
   let odd = [];
+  let even = [];
   for (let i = 0; i < N; i++) {
     if (arr[i] % 2 == 1) {
       odd.push(arr[i]);
     }
-  }
-  let even = [];
-  for (let i = 0; i < N; i++) {
-    if (arr[i] % 2 == 0) {
-      even.push(arr[i]);
+    else{
+      even.push(arr[i])
     }
   }
-
   for (let i = 0; i < odd.length; i++) {
     for (let j = 0; j < odd.length - i - 1; j++) {
       if (odd[j] > odd[j + 1]) {
