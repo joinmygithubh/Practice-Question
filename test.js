@@ -1,20 +1,25 @@
-function digitSum(num) {
-  return num.toString().split('').reduce((sum, digit) => sum + parseInt(digit), 0);
-}
-
-function digiSumSort(n, arr) {
-  // Use bubble sort to avoid using the built-in sort function
-  for (let i = 0; i < n - 1; i++) {
-      for (let j = 0; j < n - i - 1; j++) {
-          const sumA = digitSum(arr[j]);
-          const sumB = digitSum(arr[j + 1]);
-
-          if (sumA > sumB || (sumA === sumB && arr[j] > arr[j + 1])) {
-              let temp = arr[j];
-              arr[j] = arr[j + 1];
-              arr[j + 1] = temp;
-          }
+function solve(N, arr) {
+  const freqMap = new Map();
+  
+  for (let i = 0; i < N; i++) {
+      if (freqMap.has(arr[i])) {
+          freqMap.set(arr[i], freqMap.get(arr[i]) + 1);
+      } else {
+          freqMap.set(arr[i], 1);
       }
   }
-  console.log(arr.join(" "))
+  
+  let maxCount = 0;
+  let dominatingNumber = null;
+  
+  for (const [num, count] of freqMap.entries()) {
+      if (count > maxCount) {
+          maxCount = count;
+          dominatingNumber = num;
+      } else if (count === maxCount) {
+          dominatingNumber = null; // Tie case
+      }
+  }
+  
+  return dominatingNumber !== null ? "YES" : "NO";
 }
