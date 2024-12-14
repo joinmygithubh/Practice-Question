@@ -27,11 +27,9 @@ function classicalValidParenthesis(str) {
       console.log("not balanced")
     }
 }
-
 let str = "{([])}"
 let str1 = "()"
 let str2 ="([]"
-
 
 classicalValidParenthesis(str)
 classicalValidParenthesis(str1)
