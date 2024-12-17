@@ -3,29 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>LinkedIn Clone</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        header {
+            background-color: #0073b1;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        main {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px;
+        }
+        .profile, .feed {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .profile img {
+            border-radius: 50%;
+        }
+        .post {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+    </style>
 </head>
 <body>
-    <form action="">
-       <input id="name" type="text" placeholder="enter name" >
-       <input id="password" type="password" placeholder="enter password">
-       <input id="btn" type="submit" >
-    </form>
-    <h1 id="head"></h1>
+    <header>
+        <h1>LinkedIn Clone</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Messages</a></li>
+                <li><a href="#">Notifications</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="profile">
+            <img src="https://via.placeholder.com/150" alt="Profile Picture">
+            <h2>John Doe</h2>
+            <p>Software Developer</p>
+        </section>
+        <section class="feed">
+            <h2>Feed</h2>
+        </section>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const posts = [
+                { title: 'Post 1', content: 'This is the first post.' },
+                { title: 'Post 2', content: 'This is the second post.' }
+            ];
+
+            const feedElement = document.querySelector('.feed');
+
+            posts.forEach(post => {
+                const postElement = document.createElement('div');
+                postElement.classList.add('post');
+
+                const postTitle = document.createElement('h3');
+                postTitle.textContent = post.title;
+
+                const postContent = document.createElement('p');
+                postContent.textContent = post.content;
+
+                postElement.appendChild(postTitle);
+                postElement.appendChild(postContent);
+
+                feedElement.appendChild(postElement);
+            });
+        });
+    </script>
 </body>
 </html>
-
-<script>
-    
-    let form = document.querySelector("form");
-    form.addEventListener("submit", display)
-    
-    function display(){
-        event.preventDefault()
-        console.log(document.getElementById("name").value)
-        console.log(document.getElementById("password").value)
-       
-
-    }
-
-</script>
