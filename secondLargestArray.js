@@ -9,7 +9,6 @@ function secondLargest(arr) {
             second = arr[i];
         }
     }
-
     return second === -Infinity ? null : second;
 }
 // Example
