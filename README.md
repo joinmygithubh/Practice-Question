@@ -49,8 +49,23 @@ Provide instructions and examples on how to use your project.
 ```bash
 # Example
 ```
+
+## Home Section
 ![alt text](image.png)
 Include screenshots as necessary.
+
+## My Network
+![alt text](image-1.png)
+
+## Jobs
+![alt text](image-2.png)
+
+## Notifications
+![alt text](image-3.png)
+
+## My Profile Section 
+![alt text](image-4.png)
+
 
 ## Credentials
 Provide user credentials for autheticated pages
