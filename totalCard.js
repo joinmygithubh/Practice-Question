@@ -5,11 +5,9 @@ function cartTotal(N, price, quantity) {
     }
     console.log(total);
 }
-
 let N = 3;
 
 let price = [100,20,40]
 let quantity = [2,1,2]
-
 
 cartTotal(N, price,quantity)
