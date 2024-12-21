@@ -48,22 +48,28 @@ Provide instructions and examples on how to use your project.
 
 ```bash
 # Example
+
 ```
+## Sign-up Page
+![alt text](image-5.png)
+
+## Sign-in Page
+![alt text](image-6.png)
 
 ## Home Section
 ![alt text](image.png)
 Include screenshots as necessary.
 
-## My Network
+## My-Network Section
 ![alt text](image-1.png)
 
-## Jobs
+## Jobs-Section
 ![alt text](image-2.png)
 
 ## Notifications
 ![alt text](image-3.png)
 
-## My Profile Section 
+## My Profile-Section 
 ![alt text](image-4.png)
 
 
