@@ -1,29 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Multi-Method CSS Example</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Modal</title>
     <style>
-      h1 {
-        color: navy;
-        font-size: 28px;
-        background-color: #f0f0;
-      }
-      .highlighted-text {
-        background-color: yellow;
-        color: red;
-      }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #0073b1;
+            color: white;
+            padding: 10px 20px;
+        }
+
+        .navbar .nav-item {
+            margin: 0 15px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .dropdown-modal {
+            position: absolute;
+            top: 50px;
+            left: 0;
+            background-color: white;
+            width: 600px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            display: none;
+            z-index: 10;
+            padding: 20px;
+        }
+
+        .dropdown-modal.show {
+            display: block;
+        }
+
+        .dropdown-modal .section {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .dropdown-modal .section-column {
+            width: 48%;
+        }
+
+        .dropdown-modal .section-column h3 {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .dropdown-modal .section-column ul {
+            list-style: none;
+        }
+
+        .dropdown-modal .section-column ul li {
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .dropdown-modal .section-column ul li a {
+            text-decoration: none;
+            color: #0073b1;
+        }
+
+        .dropdown-modal .section-column ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .dropdown-modal .section-column ul li span {
+            color: #333;
+        }
+
+        .dropdown-modal .footer-link {
+            font-size: 14px;
+            color: #0073b1;
+            margin-top: 20px;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .dropdown-modal .footer-link:hover {
+            text-decoration: underline;
+        }
     </style>
-    <link rel="stylesheet" href="style.css">    <!-- updated styles to style -->
-  </head>
-  <body>
-    <h1>Main Title</h1>
-    <p style="font-size: 16px; color: #3333">
-      This paragraph has inline styles applied.
-    </p>
-    <p class="highlighted-text">This paragraph uses a class-based style.</p>
-    <div id="main-container">
-      <p>This div should have styles from the external stylesheet.</p>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="nav-item">Home</div>
+        <div class="nav-item" onclick="toggleDropdown()">Business</div>
+        <div class="nav-item">Contact</div>
     </div>
-  </body>
+
+    <!-- Dropdown Modal -->
+    <div id="businessModal" class="dropdown-modal">
+        <div class="section">
+            <!-- Left Column -->
+            <div class="section-column">
+                <h3>My Apps</h3>
+                <ul>
+                    <li><span>Sell</span></li>
+                    <li><span>Groups</span></li>
+                    <li><span>Talent Insights</span></li>
+                    <li><span>Post a job</span></li>
+                    <li><span>Services Marketplace</span></li>
+                    <li><span>Advertise</span></li>
+                    <li><span>Learning</span></li>
+                </ul>
+            </div>
+
+            <!-- Right Column -->
+            <div class="section-column">
+                <h3>Explore more for business</h3>
+                <ul>
+                    <li><a href="#">Hire on LinkedIn</a> <span>- Find, attract and recruit talent</span></li>
+                    <li><a href="#">Sell with LinkedIn</a> <span>- Unlock sales opportunities</span></li>
+                    <li><a href="#">Post a job for free</a> <span>- Get qualified applicants quickly</span></li>
+                    <li><a href="#">Advertise on LinkedIn</a> <span>- Acquire customers and grow your business</span></li>
+                    <li><a href="#">Get started with Premium</a> <span>- Expand and leverage your network</span></li>
+                    <li><a href="#">Learn with LinkedIn</a> <span>- Courses to develop your employees</span></li>
+                    <li><a href="#">Admin Center</a> <span>- Manage billing and account details</span></li>
+                </ul>
+                <a href="#" class="footer-link">Create a Company Page +</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleDropdown() {
+            const modal = document.getElementById('businessModal');
+            modal.classList.toggle('show');
+        }
+
+        // Close dropdown when clicking outside
+        window.addEventListener('click', function (e) {
+            const modal = document.getElementById('businessModal');
+            if (!e.target.closest('.nav-item') && !e.target.closest('#businessModal')) {
+                modal.classList.remove('show');
+            }
+        });
+    </script>
+</body>
 </html>
