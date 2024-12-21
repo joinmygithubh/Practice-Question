@@ -49,6 +49,7 @@ Provide instructions and examples on how to use your project.
 ```bash
 # Example
 ```
+![alt text](image.png)
 Include screenshots as necessary.
 
 ## Credentials
