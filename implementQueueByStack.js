@@ -36,7 +36,6 @@ class Queue {
       }
       return this.S1.pop();
     }
-  
     // Get the front element of the queue
     front() {
       if (this.S1.length === 0) {
