@@ -11,14 +11,12 @@ class Queue {
       this.S1 = []; // Stack 1
       this.S2 = []; // Stack 2
     }
-  
     // Push element into the queue
     push(value) {
       // Move all elements from S1 to S2
       while (this.S1.length > 0) {
         this.S2.push(this.S1.pop());
       }
-  
       // Add the new element to S1
       this.S1.push(value);
   
