@@ -29,6 +29,7 @@ function patternW(N) {
           }
         }
       }
+      
       console.log(output)
     }
     
