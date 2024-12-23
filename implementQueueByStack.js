@@ -51,7 +51,6 @@ class Queue {
       return this.S1.length === 0;
     }
   }
-  
   // Example usage:
   const queue = new Queue();
   queue.push(1);
