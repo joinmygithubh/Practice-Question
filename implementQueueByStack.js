@@ -45,7 +45,6 @@ class Queue {
       }
       return this.S1[this.S1.length - 1];
     }
-  
     // Check if the queue is empty
     isEmpty() {
       return this.S1.length === 0;
