@@ -118,7 +118,6 @@
         <img src="${movie.Poster}" alt="${movie.Title} poster" style="max-width: 100%;" />
       `;
     }
-
     // Attach debounced search handler to the input box
     searchBox.addEventListener('input', debounce((e) => fetchMovies(e.target.value), 500));
   </script>
