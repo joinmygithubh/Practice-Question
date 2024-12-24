@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Counter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    #counter-container {
+      font-size: 24px;
+      margin: 20px;
+    }
+    button {
+      font-size: 16px;
+      margin: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="counter-container">
+    Counter Value: <span id="counter-value">0</span>
+  </div>
+  <button id="increment-btn">Increment</button>
+  <button id="decrement-btn">Decrement</button>
+
+</body>
+</html>
+
+<script>
+    // Counter factory function
+function createCounter(initialValue) {
+  let counter = initialValue; // Closure to store the counter value
+
+  return {
+    increment: function () {
+      counter++; // Increase the counter
+      updateUI(counter); // Update the UI
+    },
+    decrement: function () {
+      counter--; // Decrease the counter
+      updateUI(counter); // Update the UI
+    },
+    getValue: function () {
+      return counter; // Return the current value
+    },
+  };
+}
+
+// Function to update the UI
+function updateUI(value) {
+  const counterDisplay = document.getElementById("counter-value");
+  counterDisplay.textContent = value; // Update the display
+}
+
+// Initialize counter and setup event listeners
+document.addEventListener("DOMContentLoaded", () => {
+  const counter = createCounter(0); // Create a counter with an initial value of 0
+
+  // Set up button event listeners
+  document.getElementById("increment-btn").addEventListener("click", () => {
+    counter.increment(); // Call increment method
+  });
+
+  document.getElementById("decrement-btn").addEventListener("click", () => {
+    counter.decrement(); // Call decrement method
+  });
+
+  // Set the initial counter value in the UI
+  updateUI(counter.getValue());
+});
+
+</script>
