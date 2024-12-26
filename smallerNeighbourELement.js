@@ -10,7 +10,6 @@ function runProgram(input) {
         while (stack.length > 0 && arr[stack[stack.length - 1]] >= arr[i]) {
             stack.pop();
         }
-
         if (stack.length === 0) {
             result.push(-1);
         } else {
