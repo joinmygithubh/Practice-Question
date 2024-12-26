@@ -1,25 +1,16 @@
-function solve(N, arr) {
-  const freqMap = new Map();
-  
-  for (let i = 0; i < N; i++) {
-      if (freqMap.has(arr[i])) {
-          freqMap.set(arr[i], freqMap.get(arr[i]) + 1);
-      } else {
-          freqMap.set(arr[i], 1);
-      }
-  }
-  
-  let maxCount = 0;
-  let dominatingNumber = null;
-  
-  for (const [num, count] of freqMap.entries()) {
-      if (count > maxCount) {
-          maxCount = count;
-          dominatingNumber = num;
-      } else if (count === maxCount) {
-          dominatingNumber = null; // Tie case
-      }
-  }
-  
-  return dominatingNumber !== null ? "YES" : "NO";
+function reduceString(str) {
+    const stack = []; // Use a stack to process characters
+    for (let char of str) {
+        if (stack.length > 0 && stack[stack.length - 1] === char) {
+            stack.pop(); // Remove the last character if it matches the current one
+        } else {
+            stack.push(char); // Otherwise, add the character to the stack
+        }
+    }
+    // Check the final state of the stack
+    if (stack.length === 0) {
+        console.log("Empty String");
+    } else {
+        console.log(stack.join("")); // Join remaining characters to form the final string
+    }
 }

@@ -19,7 +19,6 @@ function runProgram(input) {
 
         stack.push(i);
     }
-
     console.log(result.join(" "));
 }
 
