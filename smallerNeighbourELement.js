@@ -16,7 +16,6 @@ function runProgram(input) {
         } else {
             result.push(arr[stack[stack.length - 1]]);
         }
-
         stack.push(i);
     }
     console.log(result.join(" "));
