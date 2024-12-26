@@ -13,7 +13,6 @@ function solve(N, arr1, arr2) {
     console.log(stack.length === 0 ? 1 : 0);
 }
 
-
 let N= 5
 let arr1 =[1, 2, 3, 4, 5]
 let arr2 =[4, 5, 3, 2, 1]
