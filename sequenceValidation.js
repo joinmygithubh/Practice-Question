@@ -1,7 +1,6 @@
 function solve(N, arr1, arr2) {
     let stack = [];
     let poppedIndex = 0;
-
     for (let i = 0; i < N; i++) {
         stack.push(arr1[i]); 
 
