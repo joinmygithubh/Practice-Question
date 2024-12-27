@@ -6,6 +6,7 @@ function runProgram(input) {
     let stack = [];
     let result = [];
 
+
     
     for (let i = 0; i < N; i++) {
         while (stack.length > 0 && arr[stack[stack.length - 1]] >= arr[i]) {
