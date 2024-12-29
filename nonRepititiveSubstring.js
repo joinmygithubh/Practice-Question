@@ -23,7 +23,6 @@ function nonRepetitiveSubstrings(str, k) {
 
     console.log(count);
 }
-
 let str = "idwmdggom"
 let k = 2
 
