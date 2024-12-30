@@ -16,7 +16,6 @@ function stringParentheses(str) {
             }
         }
     }
-
     // If the stack is empty, the string is balanced
     console.log(stack.length === 0 ? "balanced" : "unbalanced");
 }
