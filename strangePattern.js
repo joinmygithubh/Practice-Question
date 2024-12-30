@@ -10,6 +10,7 @@ function strangePattern(N,M){
     pattern1 += "+";
     pattern2 += "+";
 
+    
     for (let i = 0; i < N; i++) {
       console.log(pattern1);
       console.log(pattern2);
