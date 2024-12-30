@@ -7,7 +7,6 @@ function strangePattern(N,M){
       pattern1 += "/\\";
       pattern2 += "\\/";
     }
-  
     pattern1 += "+";
     pattern2 += "+";
   
@@ -16,7 +15,7 @@ function strangePattern(N,M){
       console.log(pattern2);
     }
   }
-  
+
 strangePattern(3,4)
     
   
