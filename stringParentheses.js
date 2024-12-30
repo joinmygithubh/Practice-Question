@@ -21,7 +21,6 @@ function stringParentheses(str) {
     console.log(stack.length === 0 ? "balanced" : "unbalanced");
 }
 
-
 let str ="(((((((((())))))))))"
 
 stringParentheses(str)
