@@ -16,7 +16,6 @@ function strangePattern(N,M){
       console.log(pattern2);
     }
   }
-  
 strangePattern(3,4)
     
   
