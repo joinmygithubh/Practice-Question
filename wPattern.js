@@ -34,4 +34,4 @@ function patternW(N) {
     
 }
 
-patternW(4)
+patternW(4) 
