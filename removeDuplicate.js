@@ -14,7 +14,6 @@ function removeDuplicates(array) {
     }
     console.log(uniqueArray);
 }
-
 let array = [1,1,3,3]
 
 
