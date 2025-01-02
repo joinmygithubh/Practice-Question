@@ -17,4 +17,5 @@ function removeDuplicates(array) {
 let array = [1,1,3,3]
 
 
+
 removeDuplicates(array)
