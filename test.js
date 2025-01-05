@@ -1,16 +1,21 @@
-function reduceString(str) {
-    const stack = []; // Use a stack to process characters
-    for (let char of str) {
-        if (stack.length > 0 && stack[stack.length - 1] === char) {
-            stack.pop(); // Remove the last character if it matches the current one
-        } else {
-            stack.push(char); // Otherwise, add the character to the stack
-        }
+function zTraversal(N, arr) {
+    let result = [];
+
+    // Top row
+    for (let i = 0; i < N; i++) {
+        result.push(arr[0][i]);
     }
-    // Check the final state of the stack
-    if (stack.length === 0) {
-        console.log("Empty String");
-    } else {
-        console.log(stack.join("")); // Join remaining characters to form the final string
+
+    // Diagonal (excluding first and last elements)
+    for (let i = 1; i < N - 1; i++) {
+        result.push(arr[i][N - 1 - i]);
     }
+
+    // Bottom row
+    for (let i = 0; i < N; i++) {
+        result.push(arr[N - 1][i]);
+    }
+
+    console.log(result.join(" "));
 }
+
