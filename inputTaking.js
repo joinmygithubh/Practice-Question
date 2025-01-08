@@ -24,5 +24,4 @@ function runProgram(input) {
       process.exit(0);
     });
   }
-  
   runProgram("2")
