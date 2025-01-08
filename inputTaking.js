@@ -25,5 +25,4 @@ function runProgram(input) {
     });
   }
 
-
   runProgram("2")

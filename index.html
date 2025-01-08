@@ -3,220 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LinkedIn Dynamic Home Page</title>
+  <title>:active Example</title>
   <style>
-    /* General Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
-    body {
-      background-color: #f3f2ef;
-    }
-
-    /* Navbar */
-    .navbar {
-      background-color: #ffffff;
+    /* Normal button style */
+    button {
+      background-color: #4CAF50;
+      color: white;
       padding: 10px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #ddd;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    .navbar .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #0073b1;
-    }
-    .navbar input {
-      padding: 8px;
-      width: 300px;
-      border: 1px solid #ddd;
-      border-radius: 20px;
-      outline: none;
-    }
-    .navbar .icons {
-      display: flex;
-      gap: 20px;
-      font-size: 1.2rem;
-    }
-    .navbar .icons a {
-      text-decoration: none;
-      color: #555;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
     }
 
-    /* Layout */
-    .container {
-      display: flex;
-      padding: 20px;
-      gap: 20px;
-    }
-    .left, .right {
-      width: 25%;
-      background-color: #fff;
-      border-radius: 8px;
-      padding: 15px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-    .middle {
-      flex: 1;
-      background-color: #fff;
-      border-radius: 8px;
-      padding: 15px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Profile Section */
-    .profile {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .profile img {
-      border-radius: 50%;
-      width: 100px;
-      margin-bottom: 10px;
-    }
-    .profile h3 {
-      margin-bottom: 5px;
-    }
-
-    /* Feed Section */
-    .post {
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 10px;
-      margin-bottom: 15px;
-      background-color: #fff;
-    }
-    .post h4 {
-      margin-bottom: 5px;
-    }
-    .post p {
-      font-size: 0.9rem;
-      color: #555;
-    }
-
-    /* Right Section Suggestions */
-    .suggestions h3 {
-      margin-bottom: 10px;
-    }
-    .suggestions ul {
-      list-style: none;
-    }
-    .suggestions ul li {
-      margin-bottom: 10px;
-    }
-    .suggestions ul li a {
-      text-decoration: none;
-      color: #0073b1;
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      margin: 20px 0;
-      font-size: 0.8rem;
-      color: #777;
+    /* Change style when button is active (clicked) */
+    button:active {
+      background-color: #737f74; /* Darker green */
+      transform: scale(0.98); /* Slightly shrink the button */
     }
   </style>
 </head>
 <body>
-  <!-- Navbar -->
-  <div class="navbar">
-    <div class="logo">LinkedIn</div>
-    <input type="text" placeholder="Search for people, jobs, and more...">
-    <div class="icons">
-      <a href="#">🏠</a>
-      <a href="#">👥</a>
-      <a href="#">💼</a>
-      <a href="#">🔔</a>
-      <a href="#">✉️</a>
-    </div>
-  </div>
-
-  <!-- Page Layout -->
-  <div class="container">
-    <!-- Left Section -->
-    <div class="left">
-      <div class="profile">
-        <img src="https://via.placeholder.com/100" alt="Profile Photo" id="profile-pic">
-        <h3 id="profile-name">Loading...</h3>
-        <p id="profile-title">Loading...</p>
-      </div>
-    </div>
-
-    <!-- Middle Section (Feed) -->
-    <div class="middle">
-      <h2>Your Feed</h2>
-      <div id="feed">
-        <!-- Posts will be dynamically loaded here -->
-      </div>
-    </div>
-
-    <!-- Right Section -->
-    <div class="right suggestions">
-      <h3>Suggestions</h3>
-      <ul id="suggestions-list">
-        <!-- Suggestions will be dynamically loaded here -->
-      </ul>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <footer>
-    LinkedIn Clone | Built for Learning Purposes | &copy; 2024
-  </footer>
-
-  <!-- JavaScript -->
-  <script>
-    // Simulated Data (Can be replaced with API calls)
-    const userProfile = {
-      name: "John Doe",
-      title: "Web Developer",
-      photo: "https://via.placeholder.com/100"
-    };
-
-    const posts = [
-      { name: "Jane Smith", content: "Excited to share that I have joined Google as a Software Engineer! 🚀" },
-      { name: "Michael Brown", content: "Looking for new opportunities in data science. Feel free to connect! 💻" },
-      { name: "Sarah Lee", content: "Just published a new blog on React best practices. Check it out! 🔗" }
-    ];
-
-    const suggestions = [
-      { name: "Anna Williams", title: "UX Designer" },
-      { name: "David Miller", title: "Project Manager" },
-      { name: "Emily Clark", title: "Content Creator" }
-    ];
-
-    // Load Profile Data
-    document.getElementById("profile-name").textContent = userProfile.name;
-    document.getElementById("profile-title").textContent = userProfile.title;
-    document.getElementById("profile-pic").src = userProfile.photo;
-
-    // Load Feed Posts
-    const feedContainer = document.getElementById("feed");
-    posts.forEach(post => {
-      const postDiv = document.createElement("div");
-      postDiv.className = "post";
-      postDiv.innerHTML = `
-        <h4>${post.name}</h4>
-        <p>${post.content}</p>
-      `;
-      feedContainer.appendChild(postDiv);
-    });
-
-    // Load Suggestions
-    const suggestionsList = document.getElementById("suggestions-list");
-    suggestions.forEach(suggestion => {
-      const listItem = document.createElement("li");
-      listItem.innerHTML = `<a href="#">${suggestion.name}</a> - ${suggestion.title}`;
-      suggestionsList.appendChild(listItem);
-    });
-  </script>
+  <h1>CSS :active Example</h1>
+  <button>Click Me</button>
 </body>
 </html>
