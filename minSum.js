@@ -37,7 +37,6 @@ function minSum(n,k,arr){
       read += input;
     });
 
-    
     process.stdin.on("end", function () {
       read = read.replace(/\n$/, "");
       read = read.replace(/\n$/, "");
