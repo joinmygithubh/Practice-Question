@@ -43,6 +43,7 @@ function minSum(n,k,arr){
     });
     process.on("SIGINT", function () {
       read = read.replace(/\n$/, "");
+      
       runProgram(read);
       process.exit(0);
     });
