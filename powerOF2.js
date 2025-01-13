@@ -10,7 +10,6 @@ function isPowerOfTwo(number) {
     // If number is 1, it's a power of 2
     return number === 1;
 }
-
 // Test the function
 console.log(isPowerOfTwo(8));  // true (because 8 = 2 x 2 x 2)
 console.log(isPowerOfTwo(10)); // false (because 10 is not a power of 2)
