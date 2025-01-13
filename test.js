@@ -1,21 +1,72 @@
-function zTraversal(N, arr) {
-    let result = [];
+function twoArrayAndPhrase(n, m, matrix) {
+    let count = 0;
 
-    // Top row
-    for (let i = 0; i < N; i++) {
-        result.push(arr[0][i]);
+    // Horizontal search
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j <= m - 4; j++) {
+            if (
+                matrix[i][j] === "s" &&
+                matrix[i][j + 1] === "a" &&
+                matrix[i][j + 2] === "b" &&
+                matrix[i][j + 3] === "a"
+            ) {
+                count++;
+            }
+        }
     }
 
-    // Diagonal (excluding first and last elements)
-    for (let i = 1; i < N - 1; i++) {
-        result.push(arr[i][N - 1 - i]);
+    // Vertical search
+    for (let j = 0; j < m; j++) {
+        for (let i = 0; i <= n - 4; i++) {
+            if (
+                matrix[i][j] === "s" &&
+                matrix[i + 1][j] === "a" &&
+                matrix[i + 2][j] === "b" &&
+                matrix[i + 3][j] === "a"
+            ) {
+                count++;
+            }
+        }
     }
 
-    // Bottom row
-    for (let i = 0; i < N; i++) {
-        result.push(arr[N - 1][i]);
+    // Diagonal (top-left to bottom-right) search
+    for (let i = 0; i <= n - 4; i++) {
+        for (let j = 0; j <= m - 4; j++) {
+            if (
+                matrix[i][j] === "s" &&
+                matrix[i + 1][j + 1] === "a" &&
+                matrix[i + 2][j + 2] === "b" &&
+                matrix[i + 3][j + 3] === "a"
+            ) {
+                count++;
+            }
+        }
     }
 
-    console.log(result.join(" "));
+    // Diagonal (top-right to bottom-left) search
+    for (let i = 0; i <= n - 4; i++) {
+        for (let j = 3; j < m; j++) {
+            if (
+                matrix[i][j] === "s" &&
+                matrix[i + 1][j - 1] === "a" &&
+                matrix[i + 2][j - 2] === "b" &&
+                matrix[i + 3][j - 3] === "a"
+            ) {
+                count++;
+            }
+        }
+    }
+
+    console.log(count);
 }
+let n=5
+let m=5
+let matrix =[
+    ["safer"],
+    ["amjad"],
+    ["babol"],
+    ["aaron"],
+    ["songs"]
+]
 
+twoArrayAndPhrase(n,m, matrix)
