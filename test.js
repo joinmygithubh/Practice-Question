@@ -68,5 +68,4 @@ let matrix =[
     ["aaron"],
     ["songs"]
 ]
-
 twoArrayAndPhrase(n,m, matrix)
