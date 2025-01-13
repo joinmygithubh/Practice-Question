@@ -59,6 +59,7 @@ function twoArrayAndPhrase(n, m, matrix) {
 
     console.log(count);
 }
+
 let n=5
 let m=5
 let matrix =[
