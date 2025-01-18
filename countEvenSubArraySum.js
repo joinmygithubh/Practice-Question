@@ -4,7 +4,6 @@ function countEvenSumSubarrays(arr, n) {
     let currentSum = 0;
     let result = 0;
 
-    
     for (let i = 0; i < n; i++) {
         currentSum += arr[i];
         if (currentSum % 2 === 0) {
