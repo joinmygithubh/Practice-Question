@@ -15,6 +15,5 @@ function countEvenSumSubarrays(arr, n) {
         }
     }
 
-    
     console.log(result)
 }
