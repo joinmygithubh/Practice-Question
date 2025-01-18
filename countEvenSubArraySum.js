@@ -14,6 +14,7 @@ function countEvenSumSubarrays(arr, n) {
             oddCount++;
         }
     }
+
     
     console.log(result)
 }
