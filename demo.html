@@ -1,121 +1,737 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic To-Do List</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Calorie Scanner</title>
+    <link rel="stylesheet" href="styles.css" />
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
+      /* CSS Variables for consistent theming */
+      :root {
+        --primary-color: #2196f3;
+        --primary-dark: #1976d2;
+        --text-dark: #1a1a1a;
+        --text-light: #666;
+        --background-dark: #000000;
+        --background-light: #fff;
+        --shadow-small: 0 2px 5px rgba(0, 0, 0, 0.1);
+        --shadow-medium: 0 8px 20px rgba(0, 0, 0, 0.1);
+        --shadow-large: 0 12px 25px rgba(0, 0, 0, 0.15);
+        --spacing-small: 8px;
+        --spacing-medium: 16px;
+        --spacing-large: 24px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: var(--background-dark);
+        min-height: 100vh;
+      }
+
+      /* Navbar Styles */
+      .navbar {
+        background-color: var(--background-light);
+        box-shadow: var(--shadow-small);
+        padding: 15px 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 var(--spacing-large);
+      }
+
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: var(--primary-color);
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .logo:hover,
+      .logo:focus {
+        color: var(--primary-dark);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 30px;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: var(--text-dark);
+        font-weight: 500;
+        transition: color 0.3s;
+        position: relative;
+      }
+
+      .nav-links a:hover,
+      .nav-links a:focus {
+        color: var(--primary-color);
+      }
+
+      .nav-links a:focus {
+        outline: 2px solid var(--primary-color);
+        outline-offset: 2px;
+      }
+
+      /* Mobile Navigation */
+      /* .mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--spacing-small);
+  }
+   */
+
+      /* Mobile Menu Button */
+      .mobile-menu-btn {
+        display: none; /* Hidden on larger screens */
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 10;
+      }
+
+      .mobile-menu-btn span {
+        width: 100%;
+        height: 3px;
+        background-color: #2196f3;
+        transition: all 0.3s ease;
+        border-radius: 2px;
+      }
+
+      /* Hamburger Animation */
+      .mobile-menu-btn.active span:first-child {
+        transform: rotate(45deg) translate(6px, 6px);
+      }
+
+      .mobile-menu-btn.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .mobile-menu-btn.active span:last-child {
+        transform: rotate(-45deg) translate(6px, -6px);
+      }
+
+      /* Hero Section Styles */
+      .hero-section {
+        padding-top: calc(
+          70px + var(--spacing-large)
+        ); /* Adjusted for fixed navbar */
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.6)
+          ),
+          url(./assets/Hero_freepik.png);
+        background-size: cover;
+        background-position: center;
+        color: var(--background-light);
+        text-align: center;
+        padding-bottom: var(--spacing-large);
+        min-height: 80vh;
+        display: flex;
+        align-items: center;
+      }
+
+      .hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 var(--spacing-medium);
+      }
+
+      .hero-content h1 {
+        font-size: clamp(36px, 5vw, 48px);
+        margin-bottom: var(--spacing-medium);
+        line-height: 1.2;
+      }
+
+      .hero-content p {
+        font-size: clamp(18px, 2.5vw, 20px);
+        margin-bottom: var(--spacing-large);
+        line-height: 1.5;
+      }
+
+      /* Scanner Section Styles */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: var(--spacing-medium);
+      }
+
+      .scanner-section {
+        background-color: var(--background-light);
+        padding: var(--spacing-large);
+        border-radius: 10px;
+        box-shadow: var(--shadow-small);
+        margin-bottom: 40px;
+        text-align: center;
+      }
+
+      .scanner-container {
+        width: min(300px, 90vw);
+        height: min(300px, 90vw);
+        margin: 0 auto var(--spacing-medium);
+        border: 2px dashed #ccc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.05);
+      }
+
+      .scan-button {
+        background-color: var(--primary-color);
+        color: var(--background-light);
+        padding: 12px 24px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: 500;
+        font-size: 16px;
+      }
+
+      .scan-button:hover,
+      .scan-button:focus {
+        background-color: var(--primary-dark);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-small);
+      }
+
+      .scan-button:focus {
+        outline: 2px solid var(--primary-dark);
+        outline-offset: 2px;
+      }
+
+      /* Section Titles */
+      .section-title {
+        text-align: center;
+        color: var(--background-light);
+        margin-bottom: 40px;
+        font-size: clamp(24px, 4vw, 32px);
+        font-weight: 600;
+      }
+
+      /* Food Cards Section */
+      .food-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+        gap: 30px;
+        padding: var(--spacing-medium);
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .food-card {
+        background-color: var(--background-light);
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: var(--shadow-medium);
+        transition: all 0.3s ease;
+      }
+
+      .food-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-large);
+      }
+
+      .food-image-container {
+        position: relative;
+        overflow: hidden;
+        padding-top: 75%; /* 4:3 Aspect Ratio */
+      }
+
+      .food-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .food-card:hover .food-image {
+        transform: scale(1.05);
+      }
+
+      .food-info {
+        padding: var(--spacing-large);
+      }
+
+      .food-tag {
+        display: inline-block;
+        padding: 4px 12px;
+        background-color: #e3f2fd;
+        color: var(--primary-dark);
+        border-radius: 12px;
+        font-size: 12px;
+        font-weight: 500;
+        margin-bottom: 12px;
+      }
+
+      .food-name {
+        font-size: 20px;
+        font-weight: 600;
+        color: var(--text-dark);
+        margin-bottom: var(--spacing-small);
+        line-height: 1.4;
+      }
+
+      .calories {
+        color: var(--primary-color);
+        font-size: 16px;
+        font-weight: 500;
+        margin-bottom: var(--spacing-medium);
+      }
+
+      .nutrition-grid {
+        background-color: #f8f9fa;
+        border-radius: 12px;
+        padding: 15px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+      }
+
+      .nutrition-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .nutrition-icon {
+        font-size: 24px;
+        margin-bottom: var(--spacing-small);
+      }
+
+      .nutrition-value {
+        font-weight: 600;
+        color: var(--text-dark);
+        margin-bottom: 4px;
+        font-size: 14px;
+      }
+
+      .nutrition-label {
+        font-size: 12px;
+        color: var(--text-light);
+      }
+
+      .mobile-menu-btn {
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 10;
+      }
+
+      .mobile-menu-btn span {
+        width: 100%;
+        height: 3px;
+        background-color: #2196f3;
+        transition: all 0.3s ease;
+        border-radius: 2px;
+      }
+
+      .mobile-menu-btn.active span:first-child {
+        transform: rotate(45deg) translate(6px, 6px);
+      }
+
+      .mobile-menu-btn.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .mobile-menu-btn.active span:last-child {
+        transform: rotate(-45deg) translate(6px, -6px);
+      }
+
+      /* Media Queries */
+      @media (max-width: 992px) {
+        .food-cards {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
         }
 
-        ul {
-            list-style-type: none;
-            padding: 0;
+        .mobile-menu-btn {
+          /* display: block; */
+          display: flex;
         }
 
-        li {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 5px 0;
-            padding: 5px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+        .nav-links.active {
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background-color: var(--background-light);
+          padding: var(--spacing-medium);
+          box-shadow: var(--shadow-small);
         }
 
-        .completed {
-            text-decoration: line-through;
-            color: gray;
+        .food-cards {
+          grid-template-columns: 1fr;
+          padding: var(--spacing-small);
         }
 
+        .food-info {
+          padding: var(--spacing-medium);
+        }
+      }
 
-        button {
-            margin-left: 5px;
-            padding: 5px;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-        }
-        .delete {
-            background-color: red;
-            color: white;
-        }
-        .complete {
-            background-color: green;
-            color: white;
+      /* Accessibility Focus Styles */
+      :focus {
+        outline: 2px solid var(--primary-color);
+        outline-offset: 2px;
+      }
 
+      /* Animation for page load */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
         }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .food-card {
+        animation: fadeIn 0.5s ease-out forwards;
+      }
+
+      /* Loading State */
+      .scanner-container.loading {
+        position: relative;
+      }
+
+      .scanner-container.loading::after {
+        content: "";
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        border: 3px solid #f3f3f3;
+        border-top: 3px solid var(--primary-color);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
     </style>
-</head>
-<body>
-    <h1>Dynamic To-Do List</h1>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="navbar">
+      <div class="nav-container">
+        <a href="#" class="logo">MyLogo</a>
+        <button class="mobile-menu-btn" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </div>
 
-    <input type="text" id="taskInput" placeholder="Enter a task" />
-    <button id="addTaskBtn">Add Task</button>
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+      <div class="hero-content">
+        <h1>Track Your Calories Instantly</h1>
+        <p>
+          Scan QR codes to get detailed nutritional information about your
+          favorite dishes
+        </p>
+        <button class="scan-button">Start Scanning Now</button>
+      </div>
+    </section>
 
-    <ul id="taskList"></ul>
+    <div class="container">
+      <!-- Scanner Section -->
+      <section class="scanner-section" id="scanner">
+        <div class="scanner-container">
+          <div class="scanner-placeholder">
+            <p>Camera feed will appear here</p>
+            <p>Point camera at QR code</p>
+          </div>
+        </div>
+        <button class="scan-button">Start Scanning</button>
+      </section>
 
-    <script>
-        const taskInput = document.getElementById('taskInput');
-        const addTaskBtn = document.getElementById('addTaskBtn');
-        const taskList = document.getElementById('taskList');
+      <section class="common-foods" id="foods">
+        <h2 class="section-title">Discover Healthy & Delicious Meals</h2>
+        <div class="food-cards">
+          <!-- Card 1 -->
+          <div class="food-card">
+            <div class="food-image-container">
+              <img src="./assets/Chana-Masala.jpg" alt="" class="food-image" />
+            </div>
+            <div class="food-info">
+              <span class="food-tag">Vegetarian</span>
+              <h3 class="food-name">Rainbow Buddha Bowl</h3>
+              <div class="calories">385 Cal</div>
+              <div class="nutrition-grid">
+                <div class="nutrition-item">
+                  <div class="nutrition-icon">🌱</div>
+                  <div class="nutrition-value">12.5g</div>
+                  <div class="nutrition-label">Proteins</div>
+                </div>
+                <div class="nutrition-item">
+                  <div class="nutrition-icon">🥖</div>
+                  <div class="nutrition-value">45.8g</div>
+                  <div class="nutrition-label">Carbs</div>
+                </div>
+                <div class="nutrition-item">
+                  <div class="nutrition-icon">💧</div>
+                  <div class="nutrition-value">15.2g</div>
+                  <div class="nutrition-label">Fats</div>
+                </div>
+                <div class="nutrition-item">
+                  <div class="nutrition-icon">🌾</div>
+                  <div class="nutrition-value">9.3g</div>
+                  <div class="nutrition-label">Fiber</div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-        // Function to add a new task
-        function addTask() {
-            const taskText = taskInput.value.trim();
+          <!-- Card 2 -->
+          <div class="food-card">
+            <div class="food-image-container">
+              <img
+                src="./assets/samosa.jpg"
+                alt="Mediterranean Quinoa Bowl"
+                class="food-image"
+              />
+            </div>
+            <div class="food-info">
+              <span class="food-tag">High Protein</span>
+              <h3 class="food-name">Mediterranean Quinoa Bowl</h3>
+              <div class="calories">420 Cal</div>
+              <div class="nutrition-grid">
+                <div class="nutrition-item">
+                  <div class="nutrition-icon">🌱</div>
+                  <div class="nutrition-value">18.2g</div>
+                  <div class="nutrition-label">Proteins</div>
+                </div>
+                <div class="nutrition-item">
+                  <div class="nutrition-icon">🥖</div>
+                  <div class="nutrition-value">52.4g</div>
+                  <div class="nutrition-label">Carbs</div>
+                </div>
+                <div class="nutrition-item">
+                  <div class="nutrition-icon">💧</div>
+                  <div class="nutrition-value">16.8g</div>
+                  <div class="nutrition-label">Fats</div>
+                </div>
+                <div class="nutrition-item">
+                  <div class="nutrition-icon">🌾</div>
+                  <div class="nutrition-value">8.5g</div>
+                  <div class="nutrition-label">Fiber</div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-            // Check for empty input
-            if (taskText === '') {
-                alert('Please enter a task!');
-                return;
-            }
+          <!-- Card 3 -->
+          <div class="food-card">
+            <div class="food-image-container">
+              <img
+                src="./assets/idli.jpg"
+                alt="Grilled Salmon Salad"
+                class="food-image"
+              />
+            </div>
+            <div class="food-info">
+              <span class="food-tag">High Protein</span>
+              <h3 class="food-name">Grilled Salmon Salad</h3>
+              <div class="calories">440 Cal</div>
+              <div class="nutrition-grid">
+                <div class="nutrition-item">
+                  <div class="nutrition-icon">🌱</div>
+                  <div class="nutrition-value">32.5g</div>
+                  <div class="nutrition-label">Proteins</div>
+                </div>
+                <div class="nutrition-item">
+                  <div class="nutrition-icon">🥖</div>
+                  <div class="nutrition-value">12.8g</div>
+                  <div class="nutrition-label">Carbs</div>
+                </div>
+                <div class="nutrition-item">
+                  <div class="nutrition-icon">💧</div>
+                  <div class="nutrition-value">28.2g</div>
+                  <div class="nutrition-label">Fats</div>
+                </div>
+                <div class="nutrition-item">
+                  <div class="nutrition-icon">🌾</div>
+                  <div class="nutrition-value">4.5g</div>
+                  <div class="nutrition-label">Fiber</div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-            // Create a new list item
-            const li = document.createElement('li');
+          <!-- Card 4 -->
+          <div class="food-card">
+            <div class="food-image-container">
+              <img
+                src="./assets/aloo_matar.jpg"
+                alt="Aloo Matar"
+                class="food-image"
+              />
+            </div>
+            <div class="food-info">
+              <span class="food-tag">Breakfast</span>
+              <h3 class="food-name">Acai Breakfast Bowl</h3>
+              <div class="calories">320 Cal</div>
+              <div class="nutrition-grid">
+                <div class="nutrition-item">
+                  <div class="nutrition-icon">🌱</div>
+                  <div class="nutrition-value">8.5g</div>
+                  <div class="nutrition-label">Proteins</div>
+                </div>
+                <div class="nutrition-item">
+                  <div class="nutrition-icon">🥖</div>
+                  <div class="nutrition-value">48.3g</div>
+                  <div class="nutrition-label">Carbs</div>
+                </div>
+                <div class="nutrition-item">
+                  <div class="nutrition-icon">💧</div>
+                  <div class="nutrition-value">12.4g</div>
+                  <div class="nutrition-label">Fats</div>
+                </div>
+                <div class="nutrition-item">
+                  <div class="nutrition-icon">🌾</div>
+                  <div class="nutrition-value">11.2g</div>
+                  <div class="nutrition-label">Fiber</div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-            // Add task text
-            const taskSpan = document.createElement('span');
-            taskSpan.textContent = taskText;
+          <!-- Card 5 -->
+          <div class="food-card">
+            <div class="food-image-container">
+              <img
+                src="./assets/Butter_naan.jpg"
+                alt="Butter Naan"
+                class="food-image"
+              />
+            </div>
+            <div class="food-info">
+              <span class="food-tag">High Protein</span>
+              <h3 class="food-name">Grilled Chicken Quinoa Bowl</h3>
+              <div class="calories">480 Cal</div>
+              <div class="nutrition-grid">
+                <div class="nutrition-item">
+                  <div class="nutrition-icon">🌱</div>
+                  <div class="nutrition-value">35.2g</div>
+                  <div class="nutrition-label">Proteins</div>
+                </div>
+                <div class="nutrition-item">
+                  <div class="nutrition-icon">🥖</div>
+                  <div class="nutrition-value">42.8g</div>
+                  <div class="nutrition-label">Carbs</div>
+                </div>
+                <div class="nutrition-item">
+                  <div class="nutrition-icon">💧</div>
+                  <div class="nutrition-value">18.5g</div>
+                  <div class="nutrition-label">Fats</div>
+                </div>
+                <div class="nutrition-item">
+                  <div class="nutrition-icon">🌾</div>
+                  <div class="nutrition-value">7.8g</div>
+                  <div class="nutrition-label">Fiber</div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-            // Create Complete button
-            const completeBtn = document.createElement('button');
-            completeBtn.textContent = 'Complete';
-            completeBtn.classList.add('complete');
-            completeBtn.addEventListener('click', () => {
-                taskSpan.classList.toggle('completed'); // Toggle strikethrough
-            });
+          <!-- Card 6 -->
+          <div class="food-card">
+            <div class="food-image-container">
+              <img
+                src="./assets/Paneer_Masala.jpg"
+                alt="Vegan Power Bowl"
+                class="food-image"
+              />
+            </div>
+            <div class="food-info">
+              <span class="food-tag">Vegan</span>
+              <h3 class="food-name">Sweet Potato & Chickpea Bowl</h3>
+              <div class="calories">395 Cal</div>
+              <div class="nutrition-grid">
+                <div class="nutrition-item">
+                  <div class="nutrition-icon">🌱</div>
+                  <div class="nutrition-value">14.8g</div>
+                  <div class="nutrition-label">Proteins</div>
+                </div>
+                <div class="nutrition-item">
+                  <div class="nutrition-icon">🥖</div>
+                  <div class="nutrition-value">58.3g</div>
+                  <div class="nutrition-label">Carbs</div>
+                </div>
+                <div class="nutrition-item">
+                  <div class="nutrition-icon">💧</div>
+                  <div class="nutrition-value">13.2g</div>
+                  <div class="nutrition-label">Fats</div>
+                </div>
+                <div class="nutrition-item">
+                  <div class="nutrition-icon">🌾</div>
+                  <div class="nutrition-value">12.5g</div>
+                  <div class="nutrition-label">Fiber</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
 
-            // Create Delete button
-            const deleteBtn = document.createElement('button');
-            deleteBtn.textContent = 'Delete';
-            deleteBtn.classList.add('delete');
-            deleteBtn.addEventListener('click', () => {
-                li.remove(); // Remove the task
-            });
-
-            // Append elements to the list item
-            li.appendChild(taskSpan);
-            li.appendChild(completeBtn);
-            li.appendChild(deleteBtn);
-
-            // Add the list item to the <ul>
-            taskList.appendChild(li);
-
-            // Clear the input field
-            taskInput.value = '';
-        }
-
-        // Event listener for the "Add Task" button
-        addTaskBtn.addEventListener('click', addTask);
-
-        // Optional: Add task on pressing Enter
-        taskInput.addEventListener('keypress', (event) => {
-            if (event.key === 'Enter') {
-                addTask();
-            }
-        });
-    </script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
