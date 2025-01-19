@@ -1,158 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business Modal</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CalorieScan - Login</title>
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #0d0d0d;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        max-width: 1200px;
+        background: #1e1c1c;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+      }
+
+      .image-section {
+        flex: 1;
+        background: url("image-1.png") center center/cover no-repeat;
+        min-height: 500px;
+      }
+
+      .form-section {
+        flex: 1;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .form-header {
+        margin-bottom: 30px;
+        text-align: center;
+      }
+
+      .form-header h1 {
+        font-size: 2.5rem;
+        color: crimson;
+        margin-bottom: 10px;
+      }
+
+      .form-header p {
+        font-size: 1rem;
+        color: #d3d3d3;
+      }
+
+      .form {
+        width: 100%;
+        max-width: 400px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .form label {
+        font-size: 1rem;
+        color: #f0f0f0;
+      }
+
+      .form input {
+        font-size: 1rem;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 8px;
+        background: #333;
+        color: white;
+      }
+
+      .form input:focus {
+        outline: 2px solid crimson;
+      }
+
+      .form-buttons {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+      }
+
+      .btn {
+        padding: 10px 20px;
+        font-size: 1rem;
+        font-weight: bold;
+        color: white;
+        background: crimson;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .btn:hover {
+        background: darkred;
+      }
+
+      .btn a {
+        color: white;
+        text-decoration: none;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
         }
 
-        body {
-            font-family: Arial, sans-serif;
+        .image-section {
+          display: none; /* Hide the image section on smaller screens */
         }
 
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #0073b1;
-            color: white;
-            padding: 10px 20px;
+        .form-section {
+          padding: 20px;
         }
-
-        .navbar .nav-item {
-            margin: 0 15px;
-            cursor: pointer;
-            position: relative;
-        }
-
-        .dropdown-modal {
-            position: absolute;
-            top: 50px;
-            left: 0;
-            background-color: white;
-            width: 600px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border-radius: 8px;
-            display: none;
-            z-index: 10;
-            padding: 20px;
-        }
-
-        .dropdown-modal.show {
-            display: block;
-        }
-
-        .dropdown-modal .section {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .dropdown-modal .section-column {
-            width: 48%;
-        }
-
-        .dropdown-modal .section-column h3 {
-            font-size: 16px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .dropdown-modal .section-column ul {
-            list-style: none;
-        }
-
-        .dropdown-modal .section-column ul li {
-            margin-bottom: 8px;
-            font-size: 14px;
-        }
-
-        .dropdown-modal .section-column ul li a {
-            text-decoration: none;
-            color: #0073b1;
-        }
-
-        .dropdown-modal .section-column ul li a:hover {
-            text-decoration: underline;
-        }
-
-        .dropdown-modal .section-column ul li span {
-            color: #333;
-        }
-
-        .dropdown-modal .footer-link {
-            font-size: 14px;
-            color: #0073b1;
-            margin-top: 20px;
-            display: inline-block;
-            cursor: pointer;
-        }
-
-        .dropdown-modal .footer-link:hover {
-            text-decoration: underline;
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Image Section -->
+      <div class="image-section">
+        <img src="" alt="">
+      </div>
 
-    <!-- Navbar -->
-    <div class="navbar">
-        <div class="nav-item">Home</div>
-        <div class="nav-item" onclick="toggleDropdown()">Business</div>
-        <div class="nav-item">Contact</div>
-    </div>
-
-    <!-- Dropdown Modal -->
-    <div id="businessModal" class="dropdown-modal">
-        <div class="section">
-            <!-- Left Column -->
-            <div class="section-column">
-                <h3>My Apps</h3>
-                <ul>
-                    <li><span>Sell</span></li>
-                    <li><span>Groups</span></li>
-                    <li><span>Talent Insights</span></li>
-                    <li><span>Post a job</span></li>
-                    <li><span>Services Marketplace</span></li>
-                    <li><span>Advertise</span></li>
-                    <li><span>Learning</span></li>
-                </ul>
-            </div>
-
-            <!-- Right Column -->
-            <div class="section-column">
-                <h3>Explore more for business</h3>
-                <ul>
-                    <li><a href="#">Hire on LinkedIn</a> <span>- Find, attract and recruit talent</span></li>
-                    <li><a href="#">Sell with LinkedIn</a> <span>- Unlock sales opportunities</span></li>
-                    <li><a href="#">Post a job for free</a> <span>- Get qualified applicants quickly</span></li>
-                    <li><a href="#">Advertise on LinkedIn</a> <span>- Acquire customers and grow your business</span></li>
-                    <li><a href="#">Get started with Premium</a> <span>- Expand and leverage your network</span></li>
-                    <li><a href="#">Learn with LinkedIn</a> <span>- Courses to develop your employees</span></li>
-                    <li><a href="#">Admin Center</a> <span>- Manage billing and account details</span></li>
-                </ul>
-                <a href="#" class="footer-link">Create a Company Page +</a>
-            </div>
+      <!-- Form Section -->
+      <div class="form-section">
+        <div class="form-header">
+          <h1>Welcome to Calorie<span>Scan</span></h1>
+          <p>Track your meals and nutrition with the power of AI.</p>
         </div>
+        <form class="form" action="/login" method="POST">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name" required />
+
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Enter your password" required />
+
+          <div class="form-buttons">
+            <button class="btn" type="submit">Login</button>
+            <button class="btn">
+              <a href="signup.html">Signup</a>
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
-
-    <script>
-        function toggleDropdown() {
-            const modal = document.getElementById('businessModal');
-            modal.classList.toggle('show');
-        }
-
-        // Close dropdown when clicking outside
-        window.addEventListener('click', function (e) {
-            const modal = document.getElementById('businessModal');
-            if (!e.target.closest('.nav-item') && !e.target.closest('#businessModal')) {
-                modal.classList.remove('show');
-            }
-        });
-    </script>
-</body>
+  </body>
 </html>
