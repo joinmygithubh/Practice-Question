@@ -31,7 +31,6 @@ var isPalindrome = function (s) {
 // Output: 3
 // Explanation: Three palindromic strings: "a", "b", "c".
 
-
 // Example 2:
 // Input: s = "aaa"
 // Output: 6
