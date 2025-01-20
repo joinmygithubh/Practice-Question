@@ -28,7 +28,6 @@ var isPalindrome = function (s) {
 };
 
 // Example 1:
-
 // Input: s = "abc"
 // Output: 3
 // Explanation: Three palindromic strings: "a", "b", "c".
