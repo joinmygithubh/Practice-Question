@@ -26,7 +26,6 @@ var isPalindrome = function (s) {
     }
     return true;
 };
-
 // Example 1:
 // Input: s = "abc"
 // Output: 3
