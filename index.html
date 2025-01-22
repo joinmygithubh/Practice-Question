@@ -1,30 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>:active Example</title>
-  <style>
-    /* Normal button style */
-    button {
-      background-color: #4CAF50;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-
-    /* Change style when button is active (clicked) */
-    button:active {
-      background-color: #737f74; /* Darker green */
-      transform: scale(0.98); /* Slightly shrink the button */
-    }
-  </style>
-</head>
-<body>
-  <h1>CSS :active Example</h1>
-  <button>Click Me</button>
-</body>
-</html>
+const ul = document.createElement('ul');
+ul.innerHTML = "<li>Item 1</li><li>Item 2</li>";
+console.log(ul.children.length);
