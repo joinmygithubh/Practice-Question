@@ -5,7 +5,6 @@ function generateAllSubStrings(str){
             temp += str[j];
             console.log(temp)
         }  
-    }
-    
+    }   
 }
 generateAllSubStrings("MASAI")
