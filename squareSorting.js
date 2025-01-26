@@ -16,7 +16,6 @@ function squareSorting(n, arr){
     console.log(arr)
 }
 
-
 let n = 5
 let arr = [-2, 3 ,1, -4, 6]
 
