@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Finder</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #f56868;
+      color: white;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      align-content: center;
+      position: sticky;
+      top: 0;
+    }
+    #controls {
+      display: flex;
+      gap: 10px;
+    }
+    #movie-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 20px;
+    }
+    .movie-card {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      max-width: 200px;
+      cursor: pointer;
+    }
+    .movie-card img {
+      max-width: 100%;
+      border-radius: 5px;
+    }
+    #movie-details {
+      padding: 20px;
+    }
+    .hidden {
+      display: none;
+    }
+    #search, #sort{
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: 1px solid black;
+        width: 300px;
+    }
+    #search:hover{
+        border: 1px solid rgb(28, 26, 64);
+    }
+    #sort{
+        border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>MoviesFree4U</h1>
+    <div id="controls">
+      <input type="text" id="search" placeholder="Search movies..." />
+      <select id="sort">
+        <option value="">Sort by Year</option>
+        <option value="asc">Ascending</option>
+        <option value="desc">Descending</option>
+      </select>
+    </div>
+  </header>
+  <main id="movie-list"></main>
+  <section id="movie-details" >
+    <button id="back">Back to List</button>
+    <div id="details"></div>
+  </section>
+  <script>
+    const API_KEY = 'your_api_key'; // Replace with your actual API key
+    const searchInput = document.getElementById('search');
+    const sortSelect = document.getElementById('sort');
+    const movieList = document.getElementById('movie-list');
+    const movieDetails = document.getElementById('movie-details');
+    const detailsSection = document.getElementById('details');
+    const backButton = document.getElementById('back');
+
+    async function fetchMovies(query) {
+      const response = await fetch(`http://www.omdbapi.com/?apikey=20c630f3&s=${query}`);
+      const data = await response.json();
+      if (data.Response === "True") {
+        displayMovies(data.Search);
+      } else {
+        movieList.innerHTML = `<p>No movies found for "${query}"</p>`;
+      }
+    }
+
+    function displayMovies(movies) {
+      movieList.innerHTML = movies
+        .map(
+          (movie) => `
+        <div class="movie-card" onclick="showDetails('${movie.imdbID}')">
+          <img src="${movie.Poster}" alt="${movie.Title}" />
+          <h3>${movie.Title}</h3>
+          <p>${movie.Year}</p>
+        </div>
+      `
+        )
+        .join('');
+    }
+
+    async function showDetails(imdbID) {
+      const response = await fetch(`http://www.omdbapi.com/?apikey=20c630f3&i=${imdbID}`);
+      const movie = await response.json();
+      movieList.style.display = 'none';
+      movieDetails.classList.remove('hidden');
+      detailsSection.innerHTML = `
+        <img src="${movie.Poster}" alt="${movie.Title}" />
+        <h2>${movie.Title}</h2>
+        <p><strong>Year:</strong> ${movie.Year}</p>
+        <p><strong>Genre:</strong> ${movie.Genre}</p>
+        <p><strong>Director:</strong> ${movie.Director}</p>
+        <p><strong>Plot:</strong> ${movie.Plot}</p>
+      `;
+      localStorage.setItem('selectedMovie', imdbID);
+    }
+
+    backButton.addEventListener('click', () => {
+      movieDetails.classList.add('hidden');
+      movieList.style.display = 'flex';
+    });
+
+    searchInput.addEventListener('input', (e) => {
+      const query = e.target.value.trim();
+      if (query) {
+        fetchMovies(query);
+        localStorage.setItem('lastSearch', query);
+      } else {
+        movieList.innerHTML = '';
+      }
+    });
+
+    sortSelect.addEventListener('change', () => {
+      const movies = Array.from(movieList.children);
+      const sortOption = sortSelect.value;
+      if (sortOption === 'asc' || sortOption === 'desc') {
+        movies.sort((a, b) => {
+          const yearA = parseInt(a.querySelector('p').textContent, 10);
+          const yearB = parseInt(b.querySelector('p').textContent, 10);
+          return sortOption === 'asc' ? yearA - yearB : yearB - yearA;
+        });
+        movieList.innerHTML = '';
+        movies.forEach((movie) => movieList.appendChild(movie));
+      }
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const lastSearch = localStorage.getItem('lastSearch');
+      const selectedMovie = localStorage.getItem('selectedMovie');
+      if (selectedMovie) {
+        showDetails(selectedMovie);
+      } else if (lastSearch) {
+        searchInput.value = lastSearch;
+        fetchMovies(lastSearch);
+      }
+    });
+  </script>
+</body>
+</html>
