@@ -4,4 +4,5 @@ const num = [7,8,9]
 
 let result = [...numbers, ...num]
 
+
 console.log(result)
