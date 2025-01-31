@@ -25,5 +25,6 @@ function runProgram(input) {
             }
         }
     }
+    
     console.log(output.join("\n"));
 }
