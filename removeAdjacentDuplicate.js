@@ -20,7 +20,6 @@ function runProgram(input) {
         }
         results.push(stack.join(""));
     }
-
     console.log(results.join("\n"));
 }
 
