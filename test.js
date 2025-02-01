@@ -1,72 +1,25 @@
-function twoArrayAndPhrase(n, m, matrix) {
-    let count = 0;
+function previousGreaterElementBruteForce(n, arr) {
+    let res = [-1]; // First element has no previous greater element
 
-    // Horizontal search
-    for (let i = 0; i < n; i++) {
-        for (let j = 0; j <= m - 4; j++) {
-            if (
-                matrix[i][j] === "s" &&
-                matrix[i][j + 1] === "a" &&
-                matrix[i][j + 2] === "b" &&
-                matrix[i][j + 3] === "a"
-            ) {
-                count++;
+    for (let i = 1; i < n; i++) {
+        let found = false;
+
+        for (let j = i - 1; j >= 0; j--) {
+            if (arr[j] > arr[i]) {
+                res.push(arr[j]); // Push the first greater element found
+                found = true;
+                break;
             }
+        }
+
+        if (!found) {
+            res.push(-1); // If no greater element found, push -1
         }
     }
 
-    // Vertical search
-    for (let j = 0; j < m; j++) {
-        for (let i = 0; i <= n - 4; i++) {
-            if (
-                matrix[i][j] === "s" &&
-                matrix[i + 1][j] === "a" &&
-                matrix[i + 2][j] === "b" &&
-                matrix[i + 3][j] === "a"
-            ) {
-                count++;
-            }
-        }
-    }
-
-    // Diagonal (top-left to bottom-right) search
-    for (let i = 0; i <= n - 4; i++) {
-        for (let j = 0; j <= m - 4; j++) {
-            if (
-                matrix[i][j] === "s" &&
-                matrix[i + 1][j + 1] === "a" &&
-                matrix[i + 2][j + 2] === "b" &&
-                matrix[i + 3][j + 3] === "a"
-            ) {
-                count++;
-            }
-        }
-    }
-
-    // Diagonal (top-right to bottom-left) search
-    for (let i = 0; i <= n - 4; i++) {
-        for (let j = 3; j < m; j++) {
-            if (
-                matrix[i][j] === "s" &&
-                matrix[i + 1][j - 1] === "a" &&
-                matrix[i + 2][j - 2] === "b" &&
-                matrix[i + 3][j - 3] === "a"
-            ) {
-                count++;
-            }
-        }
-    }
-
-    console.log(count);
+    console.log(res);
 }
 
-let n=5
-let m=5
-let matrix =[
-    ["safer"],
-    ["amjad"],
-    ["babol"],
-    ["aaron"],
-    ["songs"]
-]
-twoArrayAndPhrase(n,m, matrix)
+// Example Usage
+let arr = [10, 4, 2, 20, 40];
+previousGreaterElementBruteForce(5, arr);
