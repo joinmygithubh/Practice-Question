@@ -21,6 +21,5 @@ console.log(calculateTriangleArea(base3, height3)); // output: "The area of the 
 let base4 = -5, height4 = 10;
 console.log(calculateTriangleArea(base4, height4)); // output: "Invalid number, base and height must be positive numbers."
 
-
 let base5 = 7, height5 = -4;
 console.log(calculateTriangleArea(base5, height5)); // output: "Invalid number, base and height must be positive numbers."
