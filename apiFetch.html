@@ -27,7 +27,6 @@ async function fetchAndDisplayUsers() {
     if (!response.ok) {
       throw new Error('Failed to fetch user data');
     }
-    
     const users = await response.json(); // Parse the JSON data
 
     // Select the unordered list element
