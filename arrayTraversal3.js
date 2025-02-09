@@ -16,7 +16,6 @@ function traverse2dArray(N, M, matrix){
             result.push(matrix[row][col]);
         }
     }
-
     console.log(result.join(" "));  
 }
 
