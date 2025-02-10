@@ -18,5 +18,4 @@ function traverse2dArray(N, M, matrix){
     }
     console.log(result.join(" "));  
 }
-
 traverse2dArray(4,3,matrix)
