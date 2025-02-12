@@ -26,6 +26,7 @@ class Queue {
       }
 
     }
+
     
     // Remove an element from the queue
     pop() {
