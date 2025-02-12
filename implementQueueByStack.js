@@ -26,7 +26,6 @@ class Queue {
       }
 
     }
-
     // Remove an element from the queue
     pop() {
       if (this.S1.length === 0) {
