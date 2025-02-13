@@ -25,6 +25,7 @@ class Queue {
         this.S1.push(this.S2.pop());
       }
 
+      
     }
     // Remove an element from the queue
     pop() {
