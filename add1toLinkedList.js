@@ -37,6 +37,5 @@ var addOneToLinkedList = function (head) {
   if (carry > 0) {
     prev.next = new LinkedListNode(carry);
   }
-
   return reverse(head);
 };
