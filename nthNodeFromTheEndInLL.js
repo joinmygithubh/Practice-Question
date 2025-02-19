@@ -14,10 +14,10 @@ function nth_node(head,n){
         first = first.next;
     }
 
+    
     while (first !== null) {
         first = first.next;
         second = second.next;
     }
-
     return second.data;
 }
