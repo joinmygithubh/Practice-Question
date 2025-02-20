@@ -17,3 +17,4 @@ var middleNode = function(head) {
     return slow.data; 
 };
 
+imp

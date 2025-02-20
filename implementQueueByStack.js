@@ -19,7 +19,6 @@ class Queue {
       }
       // Add the new element to S1
       this.S1.push(value);
-  
       // Move all elements back from S2 to S1
       while (this.S2.length > 0) {
         this.S1.push(this.S2.pop());
