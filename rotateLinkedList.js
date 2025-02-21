@@ -25,7 +25,6 @@ var rotateRight = function(head, k) {
     for (let i = 1; i < stepsToNewHead; i++) {
         newTail = newTail.next;
     }
-
     let newHead = newTail.next;
     newTail.next = null;
 
