@@ -23,6 +23,5 @@ var isPalindrome = function (head) {
         slow = slow.next;
         prev = prev.next;
     }
-
     return true;
 };
