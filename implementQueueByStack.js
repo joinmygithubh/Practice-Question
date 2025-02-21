@@ -23,7 +23,6 @@ class Queue {
       while (this.S2.length > 0) {
         this.S1.push(this.S2.pop());
       }
-
     // Remove an element from the queue
     pop() {
       if (this.S1.length === 0) {
