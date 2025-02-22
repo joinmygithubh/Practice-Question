@@ -23,6 +23,7 @@ var mergeTwoLists = function(l1, l2) {
         current = current.next;
     }
 
+    
     current.next = l1 !== null ? l1 : l2;
 
     return dummy.next;
