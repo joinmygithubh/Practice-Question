@@ -30,7 +30,6 @@ function sortedInsert(sortedHead, newNode) {
     while (current.next && current.next.data < newNode.data) {
         current = current.next;
     }
-
     newNode.next = current.next;
     current.next = newNode;
     return sortedHead;
