@@ -14,7 +14,6 @@ var deleteDuplicates = function(head) {
             current = current.next;
         }
     }
-
     return head;
 };
 
