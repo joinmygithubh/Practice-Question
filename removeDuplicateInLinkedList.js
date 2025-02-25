@@ -3,7 +3,7 @@ const LinkedListNode = class {
         this.data = nodeData;
         this.next = null;
     }
-    
+
 };
 var deleteDuplicates = function(head) {
      let current = head;
@@ -15,7 +15,6 @@ var deleteDuplicates = function(head) {
             current = current.next;
         }
     }
-
     return head;
 };
 
