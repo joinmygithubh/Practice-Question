@@ -10,6 +10,7 @@ function runProgram(input) {
         index += 2;
     }
 }
+
 function sumArray(arr, index) {
     if (index < 0) return 0; 
     return arr[index] + sumArray(arr, index - 1);
