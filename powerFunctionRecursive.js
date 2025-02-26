@@ -2,6 +2,7 @@ function runProgram(input) {
     let [a, b] = input.split(" ").map(Number);
     console.log(power(a, b));
 }
+
 function power(a, b) {
     if (b === 0) return 1; 
     let halfPower = power(a, Math.floor(b / 2));
