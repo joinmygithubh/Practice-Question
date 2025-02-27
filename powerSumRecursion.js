@@ -3,6 +3,7 @@ function runProgram(input) {
     console.log(countWays(X, N, 1));
 }
 
+
 function countWays(X, N, num) {
     let power = Math.pow(num, N);
     if (X === 0) return 1;
