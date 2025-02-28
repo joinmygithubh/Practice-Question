@@ -3,7 +3,6 @@ function canReach(n, target) {
     if (n > target) return false;
     return canReach(n * 10, target) || canReach(n * 20, target);
 }
-
 function runProgram(input) {
     let lines = input.trim().split("\n");
     let T = parseInt(lines[0]);
