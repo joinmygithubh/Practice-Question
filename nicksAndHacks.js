@@ -13,5 +13,6 @@ function runProgram(input) {
     }
 
     
+
     console.log(results.join("\n"));
 }
