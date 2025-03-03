@@ -12,6 +12,7 @@ function runProgram(input) {
         results.push(canReach(1, N) ? "Yes" : "No");
     }
 
+
     
 
     console.log(results.join("\n"));
