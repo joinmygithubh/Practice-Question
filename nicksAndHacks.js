@@ -11,6 +11,7 @@ function runProgram(input) {
         let N = parseInt(lines[i]);
         results.push(canReach(1, N) ? "Yes" : "No");
     }
+    
 
     console.log(results.join("\n"));
 }
