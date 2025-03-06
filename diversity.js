@@ -9,7 +9,6 @@ function runProgram(input) {
         index += 2;
 
         incomes.sort((a, b) => a - b);
-
         let maxFamilies = 1; 
         let left = 0;
 
@@ -19,7 +18,7 @@ function runProgram(input) {
             }
             maxFamilies = Math.max(maxFamilies, right - left + 1);
         }
-        
+
         console.log(maxFamilies);
     }
 }
