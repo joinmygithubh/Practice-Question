@@ -18,8 +18,7 @@ function runProgram(input) {
             }
             maxFamilies = Math.max(maxFamilies, right - left + 1);
         }
-        
-    
+
         console.log(maxFamilies);
     }
 }
