@@ -9,5 +9,6 @@ var reverse = function(x) {
 
       rev = rev * 10 + pop;
   }
+  
   return rev;
 };
