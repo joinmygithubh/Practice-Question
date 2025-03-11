@@ -8,6 +8,7 @@ var isMatch = function(s, p) {
         }
     }
 
+    
     for (let i = 1; i <= s.length; i++) {
         for (let j = 1; j <= p.length; j++) {
             if (p[j - 1] === '.' || p[j - 1] === s[i - 1]) {
@@ -17,6 +18,6 @@ var isMatch = function(s, p) {
             }
         }
     }
-    
+
     return dp[s.length][p.length];
 };
