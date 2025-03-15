@@ -18,6 +18,5 @@ var isMatch = function(s, p) {
             }
         }
     }
-
     return dp[s.length][p.length];
 };
