@@ -1,4 +1,4 @@
-let unSortArr = [4,-1,34,09,-9,103]
+let unSortArr = [4,-1,34,9,-9,103]
 
 const sortArr = (inputArr) => {
     for(let i=0; i<inputArr.length; i++)
