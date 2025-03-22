@@ -8,6 +8,8 @@ const isPlaindrome = (inputChar) => {
     return (resultWord == str) ? true : false;
 }
 
+
+
 console.log(isPlaindrome('racecar'))
 console.log(isPlaindrome('abc'))
 console.log(isPlaindrome(121))
