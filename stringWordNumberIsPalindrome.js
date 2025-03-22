@@ -9,8 +9,6 @@ const isPlaindrome = (inputChar) => {
 }
 
 
-
-
 console.log(isPlaindrome('racecar'))
 console.log(isPlaindrome('abc'))
 console.log(isPlaindrome(121))
