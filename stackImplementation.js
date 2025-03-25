@@ -15,8 +15,6 @@ class Stack {
     }
     return this.stk.pop();
   }
-
-  
   peek() {
     if (this.isEmpty()) return "Stack is empty";
 
