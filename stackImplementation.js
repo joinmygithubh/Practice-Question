@@ -22,7 +22,6 @@ class Stack {
   }
 
 
-  
   isEmpty() {
     return this.stk.length === 0;
   }
