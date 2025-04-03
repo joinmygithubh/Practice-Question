@@ -13,4 +13,5 @@ console.log(isPlaindrome('racecar'))
 console.log(isPlaindrome('abc'))
 console.log(isPlaindrome(121))
 
+
 console.log("Data loaded successfully ")
