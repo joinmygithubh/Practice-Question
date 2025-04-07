@@ -24,7 +24,6 @@ class Stack {
   isEmpty() {
     return this.stk.length === 0;
   }
-
   isFull() {
     return this.stk.length === this.size;
   }
