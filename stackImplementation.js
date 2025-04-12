@@ -20,7 +20,6 @@ class Stack {
 
     return this.stk[this.stk.length - 1];
   }
-
   isEmpty() {
     return this.stk.length === 0;
   }
