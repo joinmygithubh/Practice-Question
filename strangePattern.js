@@ -16,7 +16,6 @@ function strangePattern(N,M){
     }
   }
   
-
 strangePattern(3,4)
     
   
