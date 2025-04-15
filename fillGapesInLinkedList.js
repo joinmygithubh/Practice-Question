@@ -8,6 +8,7 @@ const LinkedListNode = class {
 var fillGaps = function (head) {
     if (!head) return null; 
 
+
     
     let current = head;
     while (current && current.next) {
