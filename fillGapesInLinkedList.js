@@ -6,7 +6,6 @@ const LinkedListNode = class {
 };
 var fillGaps = function (head) {
     if (!head) return null; 
-
     let current = head;
     while (current && current.next) {
         if (current.next.data - current.data > 1) {
@@ -15,9 +14,9 @@ var fillGaps = function (head) {
             newNode.next = current.next;
             current.next = newNode;
         } else {
-  
             current = current.next;
         }
     }
+    
     return head;
 };
