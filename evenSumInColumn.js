@@ -8,7 +8,6 @@ function evenSumColumns(N, M, arr) {
             }
         }
 
-        
         console.log(sum);
     }   
 }
