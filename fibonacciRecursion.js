@@ -4,6 +4,7 @@ function fibonacci(n) {
     return fibonacci(n - 1) + fibonacci(n - 2);  
 }
 
+
 function runProgram(input) {
     let n = parseInt(input.trim());
     console.log(fibonacci(n));
