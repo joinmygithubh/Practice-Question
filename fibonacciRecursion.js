@@ -7,4 +7,5 @@ function fibonacci(n) {
 function runProgram(input) {
     let n = parseInt(input.trim());
     console.log(fibonacci(n));
+    console.log(fibonacci)
 }
