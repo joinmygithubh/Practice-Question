@@ -18,6 +18,7 @@ async function apiTesting(){
             body : "Testing automated api testing" ,
             userId : 124
         }
+        
         let postResponse  = await axios.post(BASE_url, newPost, newPost2);
         console.log("Response from the post", postResponse.data)
 
