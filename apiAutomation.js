@@ -6,7 +6,6 @@ async function apiTesting(){
     try {
         let res = await axios.get(BASE_url)
         console.log("Title of the first post:" , res.data[0].title);
-
         let newPost = {
             title: 'New post',
             body : "Testing automated api testing" ,
