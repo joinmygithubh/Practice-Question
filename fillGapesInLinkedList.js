@@ -18,6 +18,5 @@ var fillGaps = function (head) {
         }
     }
     
-
     return head;
 };
