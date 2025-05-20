@@ -15,8 +15,7 @@ var fillGaps = function (head) {
             current.next = newNode;
         } else {
             current = current.next;
-        }
-        
+        }   
     }
     return head;
 };
