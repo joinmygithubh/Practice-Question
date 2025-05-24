@@ -14,6 +14,7 @@ var fillGaps = function (head) {
             newNode.next = current.next;
             current.next = newNode;
         } else {
+
             
             current = current.next;
         }   
