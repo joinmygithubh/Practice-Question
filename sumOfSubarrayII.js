@@ -11,7 +11,6 @@ function sumOfSubArrayII(n, k, arr) {
             windowSum -= arr[start]; // Remove the element at the `start` pointer from `windowSum`
             start++; // Move the `start` pointer to the right
         }
-
         if (windowSum === k) { 
             // Check if the current window's sum equals `k`
             console.log("Yes"); // If found, print "Yes"
