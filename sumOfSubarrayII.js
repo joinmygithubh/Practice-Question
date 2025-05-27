@@ -13,11 +13,12 @@ function sumOfSubArrayII(n, k, arr) {
         }
         if (windowSum === k) { 
             // Check if the current window's sum equals `k`
-            
+
             console.log("Yes"); // If found, print "Yes"
             return; // Exit the function, as we only need to determine if a subarray exists
         }
     }
+    
 
     console.log("No"); // If no subarray with sum `k` is found after iterating through the array
 }
