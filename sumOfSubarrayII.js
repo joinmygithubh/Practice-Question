@@ -19,7 +19,6 @@ function sumOfSubArrayII(n, k, arr) {
         }
     }
     
-
     console.log("No"); // If no subarray with sum `k` is found after iterating through the array
 }
 
