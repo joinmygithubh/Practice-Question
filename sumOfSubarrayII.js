@@ -21,8 +21,6 @@ function sumOfSubArrayII(n, k, arr) {
     console.log("No"); // If no subarray with sum `k` is found after iterating through the array
 }
 
-
-
 let n=5, k= 3
 let arr =[1, 2, 1, 3, 4]
 let n1=4, k1= 5
