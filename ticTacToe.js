@@ -9,7 +9,6 @@ function ticTacToe(matrix) {
   } else {
     console.log("o");
   }
-
   function check(matrix, char) {
     for (let i = 0; i < matrix.length; i++) {
       if (
