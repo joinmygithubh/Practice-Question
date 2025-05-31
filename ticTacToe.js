@@ -16,7 +16,8 @@ function ticTacToe(matrix) {
         matrix[i][1] === char &&
         matrix[i][2] === char
       ) {
-        return true;
+        return 
+        true;
       }
       if (
         matrix[0][i] === char &&
