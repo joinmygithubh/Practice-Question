@@ -18,7 +18,6 @@ function ticTacToe(matrix) {
       ) {
         return 
         true;
-
       }
       if (
         matrix[0][i] === char &&
