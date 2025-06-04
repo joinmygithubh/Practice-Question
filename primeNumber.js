@@ -9,6 +9,7 @@ function isPrime(num) {
       return; // Exit the function as we found a divisor
     }
   }
+  
   console.log("Prime Number");
 }
 isPrime(4);
