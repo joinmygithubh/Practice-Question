@@ -11,6 +11,5 @@ function isPrime(num) {
   }
   console.log("Prime Number");
 }
-
 isPrime(4);
 
