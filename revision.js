@@ -5,7 +5,6 @@ const person1 ={
         return this.fName + " " + this.lNmae + " " + city + state
     }
 }
-
 const person2 = {
     fName : "Ankit",
     LNmae : "Kumar"
