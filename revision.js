@@ -1,14 +1,13 @@
-const person1 ={
-    fName : 'Samer',
-    lNmae : "ahmed",
-    fullName : function(city, state){
-        return this.fName + " " + this.lNmae + " " + city + state
-    }
+function showAge(){
+  console.log(this.age)
 }
-const person2 = {
-    fName : "Ankit",
 
-    
-    LNmae : "Kumar"
+const user = {
+  age: 30,
+  display : showAge
 }
-console.log(person1.fullName.call(person2, "Faridabad", "Haryana"))
+
+const boundAge = user.display.bind(({age:50}))
+
+user.display = boundAge
+user.display()
