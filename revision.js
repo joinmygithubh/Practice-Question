@@ -7,7 +7,6 @@ const user = {
   display : showAge
 }
 
-
 const boundAge = user.display.bind(({age:50}))
 user.display = boundAge
 user.display()
