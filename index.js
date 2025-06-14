@@ -9,6 +9,7 @@ function tripletSum(n, arr) {
             }
         }
     }
+    
 
     console.log("0") // No valid triplet found
 }
