@@ -38,7 +38,6 @@ function showPosts() {
 
   }
 
-
 },500)
 }
 
