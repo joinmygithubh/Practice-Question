@@ -29,6 +29,7 @@ function showPosts() {
     container.appendChild(div);
   });
 
+  
   curr += limit;
   loader.style.display = "none";
   isLoading = false;
@@ -36,6 +37,7 @@ function showPosts() {
   if(curr >= allPosts.length){
     window.removeEventListener('scroll', handleScroll)
   }
+
 },500)
 }
 
