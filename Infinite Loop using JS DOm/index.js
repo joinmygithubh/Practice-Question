@@ -29,7 +29,7 @@ function showPosts() {
     container.appendChild(div);
   });
 
-  
+
   curr += limit;
   loader.style.display = "none";
   isLoading = false;
