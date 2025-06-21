@@ -30,6 +30,7 @@ function showPosts() {
   });
 
   
+
   curr += limit;
   loader.style.display = "none";
   isLoading = false;
