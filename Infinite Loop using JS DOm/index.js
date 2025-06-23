@@ -35,7 +35,6 @@ function showPosts() {
   if(curr >= allPosts.length){
     window.removeEventListener('scroll', handleScroll)
   }
-  
 
 },500)
 
