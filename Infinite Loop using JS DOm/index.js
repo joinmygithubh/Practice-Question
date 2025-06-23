@@ -36,7 +36,9 @@ function showPosts() {
     window.removeEventListener('scroll', handleScroll)
   }
   
+
 },500)
+
 
 }
 
