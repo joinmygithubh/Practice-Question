@@ -31,8 +31,9 @@ function showPosts() {
   curr += limit;
   loader.style.display = "none";
   isLoading = false;
-  
 
+
+  
   if(curr >= allPosts.length){
     window.removeEventListener('scroll', handleScroll)
   }
