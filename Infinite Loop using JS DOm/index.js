@@ -33,7 +33,6 @@ function showPosts() {
   isLoading = false;
 
 
-  
   if(curr >= allPosts.length){
     window.removeEventListener('scroll', handleScroll)
   }
