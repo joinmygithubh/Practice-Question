@@ -17,6 +17,7 @@ function showPosts() {
   isLoading = true;
   loader.style.display = "block";
 
+  
   setTimeout(()=>{
   const nextPosts = allPosts.slice(curr, curr + limit);
 
