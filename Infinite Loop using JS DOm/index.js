@@ -12,6 +12,7 @@ async function fetchData() {
   allPosts = await res.json();
   showPosts();
 }
+
 function showPosts() {
   isLoading = true;
   loader.style.display = "block";
