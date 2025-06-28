@@ -13,7 +13,6 @@ async function fetchData() {
   showPosts();
 }
 
-
 function showPosts() {
   isLoading = true;
   loader.style.display = "block";
