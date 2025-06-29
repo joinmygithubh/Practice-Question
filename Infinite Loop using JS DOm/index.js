@@ -14,6 +14,7 @@ async function fetchData() {
 }
 
 
+
 function showPosts() {
   isLoading = true;
   loader.style.display = "block";
