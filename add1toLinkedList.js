@@ -25,6 +25,7 @@ var addOneToLinkedList = function (head) {
   let current = head;
   let carry = 1;
   let prev = null;
+  
 
   while (current !== null) {
     let sum = current.data + carry;
