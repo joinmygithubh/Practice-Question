@@ -33,8 +33,7 @@ var addOneToLinkedList = function (head) {
     prev = current;
     current = current.next;
   }
-  
-  
+
   if (carry > 0) {
     prev.next = new LinkedListNode(carry);
   }
