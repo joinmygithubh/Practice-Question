@@ -21,7 +21,6 @@ var addOneToLinkedList = function (head) {
     return prev;
   }
 
-  
   head = reverse(head);
   let current = head;
   let carry = 1;
