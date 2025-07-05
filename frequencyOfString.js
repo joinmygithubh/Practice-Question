@@ -13,5 +13,6 @@ for(let i=0; i<name.length; i++){
 else{
     ob[char] =1
 }
+
 }
 console.log(ob)
