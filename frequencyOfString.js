@@ -10,6 +10,7 @@ for(let i=0; i<name.length; i++){
     if(ob[char]){
     ob[char]++
 }
+
 else{
 
     ob[char] =1
