@@ -14,6 +14,4 @@ else{
     ob[char] =1
 }
 }
-
-
 console.log(ob)
