@@ -11,7 +11,6 @@ for(let i=0; i<name.length; i++){
     ob[char]++
 }
 
-
 else{
 
     ob[char] =1
