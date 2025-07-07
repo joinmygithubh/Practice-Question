@@ -7,6 +7,7 @@ function runProgram(input) {
     let t = parseInt(lines[0]);  
 
 
+    
     for (let i = 1; i <= t; i++) {
         let [a, b] = lines[i].split(" ").map(Number);
         console.log(gcd(a, b)); 
