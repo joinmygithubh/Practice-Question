@@ -10,6 +10,7 @@ function lexographicalfrequencyString(s){
         else{
             freq[char]=1
         }
+
         
     }
     let sortedkey = Object.keys(freq).sort()
