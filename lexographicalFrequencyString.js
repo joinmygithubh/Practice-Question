@@ -12,8 +12,6 @@ function lexographicalfrequencyString(s){
         }
 
       
-
-
         
     }
     let sortedkey = Object.keys(freq).sort()
