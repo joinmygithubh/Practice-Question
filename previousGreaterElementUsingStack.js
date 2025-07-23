@@ -16,5 +16,6 @@ function previousGreaterElementUsingStack(n, arr) {
 }
 
 
+
 let arr = [10, 4, 2, 20, 40];
 previousGreaterElementUsingStack(5, arr);
