@@ -14,7 +14,5 @@ function previousGreaterElementUsingStack(n, arr) {
   }
   console.log(res)
 }
-
-
 let arr = [10, 4, 2, 20, 40];
 previousGreaterElementUsingStack(5, arr);
