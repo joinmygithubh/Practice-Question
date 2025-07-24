@@ -20,6 +20,7 @@ function getDetails(){
     }
 }
 
+
 let output = {
   under21: [{ name: "Bob",   age: 17, email: "bob@example.com"   },{ name: "Eve",   age: 19, email: "eve@example.com"   }],
   inBetween: [{ name: "Alice", age: 25, email: "alice@example.com" },{ name: "Dave",  age: 22, email: "dave@example.com"  }],
