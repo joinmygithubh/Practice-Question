@@ -54,6 +54,7 @@ let filteredData = "electronics"
 let narr = arr.filter((ele)=>{
     return ele.category == filteredData
 })
+
 .map((ele) =>{
     ele.price = ele.price -19   
     return ele
