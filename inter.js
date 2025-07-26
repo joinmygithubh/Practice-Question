@@ -56,7 +56,6 @@ let narr = arr.filter((ele)=>{
 })
 
 
-
 .map((ele) =>{
     ele.price = ele.price -19   
     return ele
