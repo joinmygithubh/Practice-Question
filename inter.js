@@ -49,20 +49,48 @@
 // console.log(result)
 
 
-let filteredData = "electronics"
+// let filteredData = "electronics"
 
-let narr = arr.filter((ele)=>{
-    return ele.category == filteredData
-})
+// let narr = arr.filter((ele)=>{
+//     return ele.category == filteredData
+// })
+
+// .map((ele) =>{
+//     ele.price = ele.price -19   
+//     return ele
+// })
+// .reduce((acc, curr)=>{
+//     acc += curr.price
+//     return acc 
+// },0)
+
+// console.log(narr)
+
+// let count = 0;
+
+// function counter() {
+  
+//   return function() {
+//     console.log(count++);
+//   }
+// }
+// const c = counter();
+// c();
+// c();
+// console.log(count);
 
 
-.map((ele) =>{
-    ele.price = ele.price -19   
-    return ele
-})
-.reduce((acc, curr)=>{
-    acc += curr.price
-    return acc 
-},0)
 
-console.log(narr)
+
+let counter = (function () {
+  let count = 0;
+  return function () {
+    count++;
+    console.log(count);
+  };
+})();
+
+counter();
+counter();
+counter();
+
