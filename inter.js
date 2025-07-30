@@ -91,8 +91,6 @@ let counter = (function () {
 })();
 
 
-
-
 counter();
 counter();
 counter();
