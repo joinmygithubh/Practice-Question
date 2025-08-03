@@ -10,6 +10,7 @@ function fetchData(){
     })
 }
 
+
 let promise = fetchData()
 .then((result)=>{
     console.log(result)
