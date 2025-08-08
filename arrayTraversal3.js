@@ -20,5 +20,4 @@ function traverse2dArray(N, M, matrix){
 }
 
 
-
 traverse2dArray(4,3,matrix)
