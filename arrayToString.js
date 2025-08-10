@@ -5,6 +5,7 @@ function arrayToString(n,arr){
       if(arr[i]<0){
         res+="0"
       }
+      
       else{
         res+= arr[i].toString();
       }
