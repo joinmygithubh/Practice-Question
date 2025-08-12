@@ -13,5 +13,6 @@ function arrayToString(n,arr){
     console.log(res)
 }
 
+
 let arr =["2", "4", "6", "8", "9"]
 arrayToString(5,arr)
