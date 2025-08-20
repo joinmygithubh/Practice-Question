@@ -9,6 +9,7 @@ function intersectionOfArray(N, arr1, arr2){
         if(arr1[i]==arr2[j]){
           console.log(arr1[i]); 
           
+          
           return;
         }
       }
