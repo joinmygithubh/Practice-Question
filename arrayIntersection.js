@@ -13,5 +13,4 @@ function intersectionOfArray(N, arr1, arr2){
       }
     }
 }
-
 intersectionOfArray(3, arr1,arr2)
