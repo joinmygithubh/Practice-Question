@@ -21,13 +21,6 @@
 
 
 
-
-
-
-
-
-
-
 let name = 'Sameer'
 let ob = {}
 
