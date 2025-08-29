@@ -5,6 +5,7 @@ const LinkedListNode = class {
     }
 };
 
+
 var fillGaps = function (head) {
     if (!head) return null; 
     let current = head;
@@ -19,6 +20,6 @@ var fillGaps = function (head) {
         }   
     }
     
-    
+
     return head;
 };
