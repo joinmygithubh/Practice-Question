@@ -4,6 +4,7 @@ const LinkedListNode = class {
         this.next = null;
     }
 };
+
 var fillGaps = function (head) {
     if (!head) return null; 
     let current = head;
