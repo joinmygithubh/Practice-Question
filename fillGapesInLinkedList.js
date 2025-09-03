@@ -19,5 +19,6 @@ var fillGaps = function (head) {
             current = current.next;
         }   
     }
+    
     return head;
 };
