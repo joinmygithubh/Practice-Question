@@ -7,6 +7,7 @@ function evenSumColumns(N, M, arr) {
                 sum += arr[i][j]; 
             }
         }
+        
         console.log(sum);
     }   
 }
