@@ -7,6 +7,7 @@ function runProgram(input) {
     for (let i = 2; i < 2 + Q; i++) {
         result.push(A.has(Number(lines[i])) ? "YES" : "NO");
     }
+    
 
     console.log(result.join("\n"));
 }
