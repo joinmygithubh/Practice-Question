@@ -9,5 +9,6 @@ function runProgram(input) {
     }
 
 
+    
     console.log(result.join("\n"));
 }
