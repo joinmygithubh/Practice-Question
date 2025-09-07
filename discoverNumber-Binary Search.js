@@ -8,7 +8,6 @@ function runProgram(input) {
         result.push(A.has(Number(lines[i])) ? "YES" : "NO");
     }
 
-    
 
     console.log(result.join("\n"));
 }
