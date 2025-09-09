@@ -4,6 +4,7 @@ function fizzBuzz(n) {
         if (i % 3 === 0) result += 'Fizz';
         if (i % 5 === 0) result += 'Buzz';
         console.log(result || i); // If result is empty, print the number
+        
     }
 }
 
