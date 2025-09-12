@@ -8,8 +8,6 @@ function fizzBuzz(n) {
     }
 }
 
-
-
 let n =15;
 
 fizzBuzz(n)
