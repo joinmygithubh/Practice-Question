@@ -9,7 +9,6 @@ function fizzBuzz(n) {
 }
 
 
-
 let n =15;
 
 
