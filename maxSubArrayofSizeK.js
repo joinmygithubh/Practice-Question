@@ -10,7 +10,6 @@ function maxSumOfSubarray(n,arr,k){
         res = sum
       }
      
-      
     }
      console.log(res)
   }
