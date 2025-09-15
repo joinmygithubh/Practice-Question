@@ -9,8 +9,7 @@ function maxSumOfSubarray(n,arr,k){
       if(sum>res){
         res = sum
       }
-     
-      
+
     }
      console.log(res)
   }
