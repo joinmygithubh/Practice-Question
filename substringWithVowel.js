@@ -10,8 +10,6 @@ function stringVowels(N,str){
         }
       }
 
-      
-
       console.log(count);
     }
     function isStartingWithVowel(str){
