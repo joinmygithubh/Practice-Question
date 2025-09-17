@@ -20,6 +20,7 @@ function printVPattern(n){
       }
 
   }
+  
 
   // Call the function with n=4 to print the pattern
   printVPattern(4);
