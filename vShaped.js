@@ -6,7 +6,7 @@ function printVPattern(n){
           row += ' ';
         }
   
-        
+
         row += '\\';
     
         for (let j = 0; j < (n - i - 1) * 2 ; j++) {
@@ -19,6 +19,7 @@ function printVPattern(n){
         console.log(row);
       }
     
+      
   }
   // Call the function with n=4 to print the pattern
   printVPattern(4);
