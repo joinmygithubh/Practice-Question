@@ -19,8 +19,6 @@ function printVPattern(n){
         console.log(row);
       }
     
-      
-
   }
   // Call the function with n=4 to print the pattern
   printVPattern(4);
