@@ -11,6 +11,5 @@ var largestNumber = function(nums) {
     // Edge case: if all zeros
     if (result[0] === '0') return '0';
 
-    
     return result;
 };
