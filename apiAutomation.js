@@ -11,6 +11,7 @@ async function apiTesting(){
             body : "Testing automated api testing" ,
             userId : 123
         }
+        
         let newPost2 = {
             title: 'New post',
             body : "Testing automated api testing" ,

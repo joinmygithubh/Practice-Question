@@ -8,7 +8,6 @@ var largestNumber = function(nums) {
     // Join into a single string
     let result = nums.join('');
 
-    
     // Edge case: if all zeros
     if (result[0] === '0') return '0';
 
