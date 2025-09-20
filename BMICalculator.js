@@ -9,6 +9,7 @@ function calculateBMI(weight, height) {
     return `Your BMI is: ${bmi.toFixed(2)}`;
 }
 // Test cases
+
 let weight1 = 70, height1 = 1.75;
 console.log(calculateBMI(weight1, height1)); // o/p: "Your BMI is: 22.86"
 
