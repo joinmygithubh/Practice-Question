@@ -12,6 +12,4 @@ function brickWallPattern(n,m){
         console.log();
     }
 }
-
-
 brickWallPattern(4,5)
