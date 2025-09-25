@@ -15,4 +15,5 @@ function brickWallPattern(n,m){
 }
 
 
+
 brickWallPattern(4,5)
