@@ -5,6 +5,7 @@ function findMissingNumber(arr) {
     return sum - arrSum;
   }
 
+  
 
   const numbers = [1, 2, 3, 5];
   console.log(findMissingNumber(numbers));  // Output: 4
