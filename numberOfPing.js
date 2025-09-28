@@ -11,6 +11,7 @@ function numberOfPing(n,str){
   }
 
   
+
 let n= 7;
 let str = "pingpin"
 let n1 =8;
