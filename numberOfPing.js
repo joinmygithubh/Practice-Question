@@ -9,6 +9,8 @@ function numberOfPing(n,str){
     }
     console.log (Math.min(countOfCharacters['p'], countOfCharacters['i'], countOfCharacters['n'], countOfCharacters['g']))
   }
+
+  
 let n= 7;
 let str = "pingpin"
 let n1 =8;
