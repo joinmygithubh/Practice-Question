@@ -17,6 +17,7 @@ var countSubstrings = function (s) {
 };
 
 
+
 var isPalindrome = function (s) {
     let start = 0;
     let end = s.length - 1;
