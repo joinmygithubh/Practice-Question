@@ -7,10 +7,10 @@ var findRepeatedDnaSequences = function(s) {
         const seq = s.substring(i, i + 10);
         if (seen.has(seq)) {
             repeated.add(seq);
-        } else {
+        } 
+        else {
             seen.add(seq);
         }
-        
     }
     return Array.from(repeated);
 };
