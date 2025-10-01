@@ -12,5 +12,6 @@ var findRepeatedDnaSequences = function(s) {
             seen.add(seq);
         }
     }
+    
     return Array.from(repeated);
 };
