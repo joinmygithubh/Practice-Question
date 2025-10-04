@@ -11,11 +11,9 @@ var findRepeatedDnaSequences = function(s) {
         else {
             seen.add(seq);
         }
-
-
     }
 
-    
+
 
     return Array.from(repeated);
 };
