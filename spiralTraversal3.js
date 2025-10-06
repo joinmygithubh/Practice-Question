@@ -19,6 +19,7 @@ function spiralTraversalV(N, matrix) {
       }
       bottom--;
   
+      
       for (let i = bottom; i >= top && count < N * N; i--) {
         temp += matrix[i][left] + " ";
         count++;
