@@ -8,4 +8,5 @@ function invertedL(N) {
         console.log()
     }
 }
+
 invertedL(4);
