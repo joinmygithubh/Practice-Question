@@ -9,4 +9,5 @@ function invertedL(N) {
     }
 }
 
+
 invertedL(4);
