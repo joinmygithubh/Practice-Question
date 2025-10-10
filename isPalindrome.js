@@ -11,5 +11,6 @@ function isPalindrome(str) {
     }
     console.log("Yes")
   }
+  
 
   isPalindrome("Nitin")
