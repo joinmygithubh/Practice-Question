@@ -7,10 +7,9 @@ function isPalindrome(str) {
       }
       i++;
       j--;
-      
+
     }
     console.log("Yes")
   }
 
-  
   isPalindrome("Nitin")
