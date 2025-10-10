@@ -13,4 +13,5 @@ function isPalindrome(str) {
   }
   
   
+
   isPalindrome("Nitin")
