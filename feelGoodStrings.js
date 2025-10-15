@@ -8,8 +8,7 @@ function feelGoodStrings(N, string) {
             vowelCount++;
         }
     }
-    
-    
+
     // Check if vowel count is greater than or equal to N/2
     if (vowelCount >= N / 2) {
         console.log("Feel good!");
