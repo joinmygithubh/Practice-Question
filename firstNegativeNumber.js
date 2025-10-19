@@ -15,7 +15,6 @@ function FindNegativeNumber(arr, n, k) {
             j++;
         }
 
-        
         if (flag) {
             bag += "0 "; // Add "0" to the bag if no negative number is found
         }
