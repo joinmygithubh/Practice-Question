@@ -13,6 +13,7 @@ function FindNegativeNumber(arr, n, k) {
             }
             count++;
             j++;
+
             
         }
         if (flag) {
