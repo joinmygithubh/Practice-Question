@@ -14,10 +14,12 @@ function FindNegativeNumber(arr, n, k) {
             count++;
             j++;
         }
+        
         if (flag) {
             bag += "0 "; // Add "0" to the bag if no negative number is found
         }
     }
+
     console.log(bag.trim()); // Print the bag (trim to remove trailing spaces)
 }
 // Example usage
