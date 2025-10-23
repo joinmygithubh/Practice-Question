@@ -10,3 +10,5 @@ function generateAllSubStrings(str){
 
 
 generateAllSubStrings("MASAI")
+
+
