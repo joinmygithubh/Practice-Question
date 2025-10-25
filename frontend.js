@@ -5,5 +5,4 @@ const sum = number.reduce((acc , current) =>{
 },0)
 
 
-
 console.log(sum)
