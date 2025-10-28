@@ -12,6 +12,7 @@ class PriorityQueue {
       return this.items.shift().item;
     }
   }
+
   
 
   const priorityQueue = new PriorityQueue();
