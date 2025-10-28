@@ -11,9 +11,10 @@ class PriorityQueue {
     dequeue() {
       return this.items.shift().item;
     }
+    
   }
 
-  
+
 
   const priorityQueue = new PriorityQueue();
   priorityQueue.enqueue("Task 1", 3);
