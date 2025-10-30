@@ -15,7 +15,6 @@ class PriorityQueue {
 
 
 
-  
   const priorityQueue = new PriorityQueue();
   priorityQueue.enqueue("Task 1", 3);
   priorityQueue.enqueue("Task 2", 1);
