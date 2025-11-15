@@ -15,8 +15,6 @@ function selectionSort(n, arr){
 }
 
 
-
-
 let n = 5
 let arr = [3, 5, 0, 9, 8]
 
