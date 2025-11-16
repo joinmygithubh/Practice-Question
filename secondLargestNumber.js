@@ -17,6 +17,5 @@ function secondLargestNumber(arr) {
 
 
 
-
 const array = [10, 5, 20, 15, 30];
 console.log(secondLargestNumber(array)); // Output: 20
