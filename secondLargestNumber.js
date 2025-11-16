@@ -15,7 +15,6 @@ function secondLargestNumber(arr) {
 }
 
 
-
 // Example usage
 
 const array = [10, 5, 20, 15, 30];
