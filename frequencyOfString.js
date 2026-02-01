@@ -20,20 +20,20 @@
 
 
 
-let name = 'Sameer'
+let name = "Ssaameer"
+
 let ob = {}
 
-for(let i=0; i<name.length; i++){
-    let char = name[i]
+for(let i =0; i < name.length; i++){
+   if(ob[name[i]]){
+    ob[name[i]]++
+   }
+   else{
+    ob[name[i]] = 1
+   }
 
-    if(ob[char]){
-        ob[char]++
-    }
-    else{
-        ob[char] =1
-    }
 }
 
-
+console.log(ob)
 
 

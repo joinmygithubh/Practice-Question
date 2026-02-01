@@ -1,4 +1,5 @@
-function isPalindrome(str) {
+# Write a program to check palindrome
+  function isPalindrome(str) {
   let l = 0;
   let r = str.length - 1;
 
@@ -19,4 +20,8 @@ isPalindrome(str)
 isPalindrome(str1)
 
 
+# Write a program to check fibonacci series
 
+# Write a check second largest number in a string
+# Write a program 
+ 
